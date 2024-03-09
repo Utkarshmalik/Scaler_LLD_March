@@ -1,0 +1,145 @@
+
+Agenda 
+
+
+HTML Forms and its Attributes 
+Introduction to CSS 
+Rules to Add CSS 
+Selectors : Good amount of questions around it 
+Properties of CSS 
+
+
+
+Forms 
+
+Just like any other forms are used to collect information, in context of HTML it collects user input on a web page. 
+They allow users to enter data, make selections, and submit that information to a server for processing. HTML forms are created using a combination of form-related tags and input elements
+
+
+
+1. <form> 
+tag defines the beginning of a form and contains the elements that make up the form
+, such as text fields, checkboxes, and buttons.
+
+
+2. <input>
+
+The <input> tag is used to create various types of form input fields. 
+The type attribute specifies the type of input field to be displayed.
+
+ Common type values include:
+
+<input type="text"> : text: Creates a single-line text input.
+<input type="password"> : Creates a password input field (text is masked for security).
+<input type="checkbox"> : Creates a checkbox for binary (true/false) choices.
+<input type="radio"> :Creates a radio button for selecting one option from a group.
+<input type="submit"> : Creates a submit button to send the form data.
+<input type="button"> :Creates a generic button.
+<input type="email"> :
+<input type="number"> :
+<input type="date"> :
+
+
+
+
+
+
+<label>: tag is used to associate a label with a form element,
+ making the form more accessible and user-friendly. The for attribute of the <label> t
+ ag should match the id attribute of the form element it labels.
+
+
+
+<select>
+
+<select>: tag creates a dropdown list, allowing users to select one option from a list of choices. It contains one or more <option> elements.
+
+
+<option>: tag defines an individual item in a <select> dropdown list. 
+
+
+
+
+
+The <fieldset> element is used to group related elements in a form 
+and is often used to visually separate them with a border or 
+some other stylistic treatment.
+
+<legend> element is used to define a caption for the <fieldset> element.
+
+
+
+
+
+CSS
+
+
+
+3  various ways of using CSS
+
+They are:
+
+External
+Internal
+Inline
+
+
+
+
+ User-Agent StyleSheet
+
+ The user agent stylesheet in CSS is a set of default styles that web browsers apply to HTML documents when no specific styles are provided by the author. 
+ Each web browser has its own user agent stylesheet, and it serves as a baseline style for rendering HTML elements
+
+
+
+ 1. External CSS
+
+You can create a separate file for CSS having the extension ".css".
+
+2. Internal CSS
+
+When you write CSS in the same HTML file. (using the style tag)
+
+
+3. Inline CSS
+
+It is writing CSS for a particular element. (using style attribute.)
+
+
+
+CSS precedence determines which styles will be applied to an HTML element when conflicting styles are defined in multiple places. Here's the precedence order:
+
+
+
+Inline CSS: Styles defined directly within the HTML element using the style attribute have the highest precedence. They override any other styles applied to the same element.
+
+
+Internal CSS: Styles defined within a <style> tag in the <head> section of the HTML document come next in precedence. They apply to all elements of the same type throughout the document, unless overridden by inline styles.
+
+
+External CSS: Styles defined in an external CSS file linked to the HTML document using the <link> tag have the lowest precedence. They apply globally to all elements of the specified type, unless overridden by inline or internal styles.
+
+
+In cases of conflicting styles (where the same property is defined in multiple places), the style with the highest precedence will be applied.
+
+
+
+Selectors 
+
+
+1. *  : Univeral Selector 
+2. Element Selector
+3. Class Selectors  (.className)
+4. Id Selectors (#IdName)
+
+
+5. Descendent selectors
+
+Anything down the order can be termed as a descendent. For example, a child is the descendent of their Father as well as their GrandFather.
+
+
+6. Children Selector 
+
+
+Child selectors in CSS allow you to target and style elements that are direct children of a specified parent element. The syntax for a child selector is using the greater-than sign (>). This selector is more specific than the descendant selector because it only selects immediate children, not all descendants.

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> User Registration Form </title>
+</head>
+<body>
+
+    <h2> Registration Form </h2>
+
+
+    <form>
+        <br/>
+
+        <!-- Username Input -->
+        <label for="username"> UserName :  </label>
+        <input type="text" name="username" id="username" required   />
+        <br/>
+
+
+        <!-- Email Input -->
+
+        <label for="email"> Email :  </label>
+        <input name="username" type="email" id="email">
+        <br/>
+
+        <!-- Password Input -->
+    
+        <label for="password">Password:</label>
+        <input  name="password" type="password" id="password" >
+        <br/>
+
+        <!-- Gender Selection -->
+
+        <label for="gender"> Gender :  </label>
+
+        <select id="gender" >
+            <option value="a">  Male </option>
+            <option value="b" selected>  Female </option>
+            <option value="c">  Other </option>
+
+        </select>
+        <br/>
+
+                <!-- Favourate Color  -->
+
+        <label for="colors">Select your favorite colors:</label>
+        <select id="colors" name="colors" multiple>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+
+        <!-- Communication Method -->
+
+        <fieldset>
+            <legend> Preferred Communication Method </legend>
+            
+            <label for="emailComm">Email</label>
+            <input type="radio" id="emailComm" value="email" name="communication">
+
+            <label for="phoneComm">Phone</label>
+            <input type="radio" id="phoneComm" value="phone" name="communication">
+
+
+        </fieldset>
+    
+
+
+            
+        <br/>
+
+
+        <!-- Newsletter Subscription -->
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox" id="subscribe" >
+
+        <br/>
+
+                <!-- Additional Comments -->
+                <label for="comments">Additional Comments:</label>
+             <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+
+        <br/>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register" > 
+
+
+
+    </form>
+
+
+    
+</body>
+</html>

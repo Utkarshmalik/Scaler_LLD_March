@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <style>
+
+    /* Styles for direct children 'p' elements inside the 'container' div */
+        .container > p {
+            color : red
+        }
+
+    /* Styles for direct children 'span' elements inside the 'container' div */
+
+    .container > span {
+            font-weight: bold;
+        }
+
+
+        .container > p > span {
+
+            color: green;
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <span> i am aspan  </span>
+        <p>This is a paragraph with a <span>bold</span> word.</p>
+        <div>
+            <p>This paragraph is not directly targeted.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
