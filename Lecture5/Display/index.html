@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .block{
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+        .block {
+
+            background-color: lightblue;
+            border:2px solid black;
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+
+        a{
+            background-color: firebrick;
+            height: 100px;
+            margin-top: 100px;
+        }
+
+
+        h1{
+            background-color: blue;
+        }
+
+    .inline_block{
+
+ background-color: lightblue;
+            border:2px solid black;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+          margin-top: 20px;
+            margin-left: 30px;  
+          }
+
+
+    </style>
+
+</head>
+<body>
+
+    <h1> Hello from H1 </h1>
+
+    <div class="block"> Hello , Hi How are you ?  </div> 
+    <div class="block"> Hello , Hi How are you ? </div>
+
+    <a class="inline"> Hello i am an anchor tag </a>
+    <span class="inline"> I am a span tag  </span>
+
+
+    <div class="inline_block">I am inline block </div>
+    <div class="inline_block">I am inline block </div>
+    <div class="inline_block">I am inline block </div>
+
+
+</body>
+</html>
+<!-- 
+Block Level Element
+
+width - takes all the available width 
+
+
+
+
+-->
+<!-- 
+Inline Elements
+
+width - only the width of the content.
+generally used to give styling to a part of the sentence.
+cannot set height or width to an inline element
+padding works for all but margin only works for horizontal.
+Inline elements don't bother about the vertical margin of the block-level element.
+Dry run for all properties in inspect to show what works and what won't
+Inline span and anchor are a good example of inline elements -->
+
+
+
+<!-- Inline-block
+
+It has properties of both inline and block elements
+somewhere in between inline and block
+It takes height width, padding, and margin but doesn't occupy complete width.
+Thus, on the outer level will act as an inline element but every property of a block-level element applies. --> -->
