@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .px,.vh-vw,.rem,.em
+        {
+            margin: 20px;
+            background-color: lightgreen;
+
+        }
+
+        .px{
+            font-size: 20px;
+
+        }
+        
+
+        .grandParent{
+            height: 200px;
+            width: 200px;
+            background-color: bisque;
+        }
+
+        .parent{
+            height: 50%;
+            width: 50%;
+            background-color: lightcoral;
+        }
+
+        .child{
+            background-color: lightblue;
+            height: 50%;
+            width: 50%;
+        }
+
+    
+
+    /* viewport height ->borwser window height */
+        .vh-vw{
+
+            /* 20% of browser screen height  */
+            height: 20vh;
+
+            /* 50% of browser screen width */
+            width: 50vw;
+        }
+
+        html{
+            font-size: 11.5px;
+        }
+
+        .rem{
+            font-size: 2rem;
+        }
+
+        .pa{
+            font-size: 5px;
+        }
+
+        .em{
+            font-size: 3em;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="px">  Pixel Unit </div>
+
+    <div class="grandParent">
+
+        <div class="parent">
+
+            <div class="child">
+
+                Percentage
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="vh-vw">
+    VH-VW Unit
+    </div>
+
+    <div class="rem">
+
+        REM Unit 
+
+    </div>
+
+
+    <div class="pa">
+       <div class="em">
+         I am em
+       </div>
+    </div>
+
+
+    
+</body>
+</html>

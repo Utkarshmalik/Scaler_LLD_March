@@ -1,0 +1,103 @@
+Units
+
+PX
+
+Pixels are like the tiny dots on your screen. When you use pixels, you're saying exactly how many dots something should be tall or wide.
+
+font-size:16px
+
+1px is equal to one device pixel on the screen.
+
+Use Case: Pixels are great for when you want precise control, like for a border width or a button size.
+
+The px unit is fixed and does not change with the size of the viewport or user settings.
+
+Percentage (%):
+
+The % unit is relative to the size of the containing element.
+
+Example: width: 50%; means the element will take up half the width of its parent.
+
+Use Case: Percentages are useful for responsive design, where you want elements to change size based on the screen or parent element.
+
+Viewport Width (vw) and Viewport Height (vh):
+
+vw is a percentage of the viewport width, and vh is a percentage of the viewport height.
+
+Useful for creating responsive designs based on the viewport size.
+
+1vh is equal to 1% of the viewport height, while 1vw is equal to 1% of the viewport width.
+
+These units are useful for creating elements that scale proportionally with the size of the viewport.
+
+They are often used for creating full-screen sections or elements that should take up a certain percentage of the viewport.
+
+REM:
+
+relative to the font-size of the root element (usually the <html> tag).
+
+Useful for maintaining consistent spacing throughout the document.
+
+This makes rem units particularly useful for creating consistent layouts across the entire document, regardless of nested elements' font sizes.
+
+Em (em):
+
+The em unit is equal to the computed value of the font size of the parent element.
+
+Em units are particularly useful for setting typography-related properties like line height, letter spacing, and margins.
+
+Flex Wrap:
+
+By default, flex items will try to fit into a single line. If they overflow the container, they will shrink to fit.
+
+The flex-wrap property allows you to control whether flex items wrap onto multiple lines or not. Values include nowrap, wrap, and wrap-reverse.
+
+Flexbox, short for Flexible Box Layout, is a powerful layout model in CSS designed to make it easier to design complex layouts with a predictable and flexible alignment of items within a container. It provides a more efficient way to distribute space among items in a container, even when their size is unknown or dynamic, by allowing items to flex and fill available space.
+Flexbox operates along a single axis (either horizontally or vertically), known as the main axis, and optionally a perpendicular axis, known as the cross axis. This model makes it particularly useful for creating both simple and complex layouts, such as navigation bars, sidebars, grids, and more.
+Here's a detailed explanation of Flexbox concepts:
+
+1. Flex Container:
+
+   - To use Flexbox, you first need to designate a container element as a flex container by applying display: flex; or display: inline-flex; to it.
+   - The display: flex; property turns the container's children into flexible items and establishes a flex formatting context for the container.
+   - By default, the main axis runs horizontally from left to right (flex-direction: row;), but you can change it to vertical by setting flex-direction: column;.
+
+1. Flex Items:
+
+   - Elements inside a flex container are called flex items.
+   - These items can expand and contract to fill the available space along the main axis.
+   - By default, flex items will be laid out in a single row (if flex-direction: row;) or column (if flex-direction: column;), but you can change their order and alignment using various properties.
+
+1. Main Axis and Cross Axis:
+
+   - The main axis is the primary axis along which flex items are laid out within the flex container. It's determined by the flex-direction property.
+   - The cross axis is perpendicular to the main axis. For flex-direction: row;, the cross axis runs vertically, and for flex-direction: column;, it runs horizontally.
+
+1. Justify Content:
+
+   - The justify-content property defines how flex items are aligned along the main axis within the flex container.
+   - Values for justify-content include flex-start, flex-end, center, space-between, and space-around, among others.
+
+1. Align Items:
+
+   - The align-items property defines how flex items are aligned along the cross axis within the flex container.
+   - Values for align-items include flex-start, flex-end, center, baseline, and stretch.
+
+1. Flex Direction:
+
+   - The flex-direction property defines the direction in which flex items are placed within the flex container.
+   - Values for flex-direction include row, row-reverse, column, and column-reverse.
+
+1. Flex Wrap:
+
+   - By default, flex items will try to fit into a single line. If they overflow the container, they will shrink to fit.
+   - The flex-wrap property allows you to control whether flex items wrap onto multiple lines or not. Values include nowrap, wrap, and wrap-reverse.
+
+- Order
+  In Flexbox, the order property allows you to control the order in which flex items appear inside their flex container, regardless of their source order in the HTML markup. By default, all flex items have an order value of 0, meaning they appear in the order they are written in the HTML. However, you can change this order by assigning different order values to individual flex items.
+
+1. Flex Grow, Flex Shrink, Flex Basis:
+
+   - Flex items have three properties that control how they grow, shrink, and behave when there is extra space or not enough space. These are flex-grow, flex-shrink, and flex-basis.
+
+Flexbox provides a powerful and intuitive way to create complex layouts without the need for floats or positioning hacks. It's widely supported by modern browsers and is often preferred over traditional layout methods for its simplicity and flexibility.

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+    .parent {
+        width: 80%;
+        background-color: rgb(176, 141, 211);
+        padding: 10px;
+        display: flex;
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+
+        /* align-items: flex-start; */
+        /* align-items: center; */
+
+
+
+
+        /*
+        justify-content: flex-start;
+        justify-content: flex-end;  
+        justify-content: center; 
+        justify-content: space-between;
+        justify-content: space-around;
+       justify-content: space-evenly;   */ 
+
+
+        /* flex-wrap: wrap-reverse; */
+    }
+
+    .child {
+        color: rgb(179, 40, 40);
+        height: 100px;
+        width: 100px;
+        font-size: 1rem;
+        background-color: lightcoral;
+        font-weight: bold;
+        font-family: sans-serif;
+        margin: 0.5rem;
+        padding:0.5rem;
+    }
+
+    .child9{
+        flex-shrink: 2;
+    }
+
+    .child1{
+        flex-shrink: 5;
+    }
+
+    .child4{
+        order: 10;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <h3> FlexBox Example </h3>
+
+    <div class="parent">
+
+        <div class="child child1"> I am a child 1 </div>
+        <div class="child"> I am a child 2 </div>
+        <div class="child"> I am a child 3 </div>
+        <div class="child child4"> I am a child 4 </div>
+        <div class="child"> I am a child 5 </div>
+        <div class="child"> I am a child 6 </div>
+        <div class="child"> I am a child 7 </div>
+        <div class="child"> I am a child 8 </div>
+        <div class="child child9"> I am a child 9 </div>
+        <div class="child"> I am a child 10 </div>
+        <div class="child"> I am a child 11 </div>
+
+    </div>
+    
+</body>
+</html>

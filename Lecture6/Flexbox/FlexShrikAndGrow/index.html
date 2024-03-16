@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    .parent1 {
+        height: 30rem;
+        width: 60vw;
+        background-color: rgb(176, 141, 211);
+    }
+
+       .child1 {
+        color: rgb(179, 40, 40);
+        background-color: lightcoral;
+        font-weight: bold;
+        border: dashed;
+        font-family: sans-serif;
+    }
+
+    .child1{
+        width: 10rem;
+        height: 6rem;
+    }
+
+    .parent1{
+        display: flex;
+    }
+
+    .one{
+        /* flex-shrink:4; */
+        background-color: lightgreen;
+        flex-grow: 30;
+    }
+
+    .two{
+        /* flex-shrink: 100; */
+        background-color: lightpink;
+        flex-grow: 10;
+
+    }
+
+    .three{
+        /* flex-shrink: 2; */
+        background-color: lightblue;
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- ******************************************** -->
+    <!-- flex-grow and shrink -->
+    <h3>Flex Grow shrink</h3>
+    <div class="parent1">
+        <div class="child1 one">I am child 
+        </div>
+        <div class="child1 two ">I am child</div>
+        <div class="child1 three"> I am child</div>
+    </div>
+    <br>
+
+</body>
+</html>
