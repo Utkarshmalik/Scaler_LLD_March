@@ -101,3 +101,14 @@ Here's a detailed explanation of Flexbox concepts:
    - Flex items have three properties that control how they grow, shrink, and behave when there is extra space or not enough space. These are flex-grow, flex-shrink, and flex-basis.
 
 Flexbox provides a powerful and intuitive way to create complex layouts without the need for floats or positioning hacks. It's widely supported by modern browsers and is often preferred over traditional layout methods for its simplicity and flexibility.
+
+align-content: This property is used to align a flex container's lines within the flex container when there is extra space in the cross-axis (vertical axis if the main axis is horizontal, and vice versa). It only has an effect when there are multiple lines of flex items within the container. This property accepts the same values as "justify-content" but applies to the cross-axis instead of the main axis.
+
+Example values:
+
+flex-start: Lines are packed toward the start of the flex container.
+flex-end: Lines are packed toward the end of the flex container.
+center: Lines are packed in the center of the flex container.
+space-between: Lines are evenly distributed; the first line is at the start of the container while the last one is at the end.
+space-around: Lines are evenly distributed with equal space around each line.
+stretch: Lines stretch to take up the remaining space.
