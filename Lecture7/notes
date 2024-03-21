@@ -12,3 +12,25 @@ size of each frame will be 1200/4 = 300px.
 size of first column : 300px
 size of second column : 600px
 size of third column : 300px
+
+Grid Container:
+
+    * When you apply display: grid to an element, it becomes a grid container, and its child elements become grid items.
+    * The grid container establishes a new grid formatting context, which affects the layout and behavior of its child elements.
+
+Grid Lines and Cells:
+
+    * A grid layout consists of horizontal and vertical lines that define rows and columns, respectively.
+    * The intersections of these lines create grid cells, which are the individual units that contain grid items.
+
+Grid Template:
+
+    * You can define the structure of the grid using the grid-template-rows and grid-template-columns properties.
+    * These properties allow you to specify the size of each row and column, as well as their distribution and alignment.
+    * You can use various units such as pixels, percentages, fr units (for distributing available space), and auto (for automatic sizing based on content).
+
+Grid Gaps:
+_ You can add spacing between rows and columns using the grid-row-gap and grid-column-gap properties.
+_ Alternatively, you can use the grid-gap shorthand property to set both row and column gaps simultaneously.
+
+The :nth-of-type() pseudo-selector is a CSS selector that allows you to select elements based on their position within their parent element. Specifically, it targets elements that match a certain position or pattern within a specified type of parent container.
