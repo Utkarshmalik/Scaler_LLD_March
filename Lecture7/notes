@@ -34,3 +34,12 @@ _ You can add spacing between rows and columns using the grid-row-gap and grid-c
 _ Alternatively, you can use the grid-gap shorthand property to set both row and column gaps simultaneously.
 
 The :nth-of-type() pseudo-selector is a CSS selector that allows you to select elements based on their position within their parent element. Specifically, it targets elements that match a certain position or pattern within a specified type of parent container.
+
+The grid-template-areas property in CSS Grid Layout allows you to define named grid areas within a grid container. It provides a convenient way to visually map out the layout of your grid by assigning names to specific regions or sections of the grid.
+
+grid-template-area
+
+.grid-container {
+grid-template-areas: "area1 area2 area3"
+"area4 area5 area6";
+}

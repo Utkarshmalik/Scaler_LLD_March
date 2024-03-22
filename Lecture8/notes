@@ -1,0 +1,27 @@
+In this example,render the HTML elements with default styles. Developers can then use CSS to override these defaults and style the content according to their preferences.
+
+Cascading Nature of CSS
+
+In layman's terms, the "cascading" in CSS can be likened to a waterfall flowing down a series of steps. Just as water flows from the top and cascades down, styles in CSS are applied from the top of the stylesheet to the bottom, with later styles flowing down and potentially overriding earlier ones.
+
+Top-Down Application: Styles in CSS are applied in the order they are written in the stylesheet. This means a rule written at the bottom of your CSS file will be applied after all the rules written above it.
+
+Inheritance: Some styles naturally cascade from parent elements to their children. For example, if you set the font-family on the body element, this style will be inherited by all the text inside the body, unless there's a more specific rule applied to the text.
+
+Keyword - !important
+If the keyword !important is used then it follows the cascading rule regardless of the Specificity Value. Use this keyword only once in a selector. If it is used twice for the same selector then the Specificity rule will be followed.
+
+Example
+ul#fruits li.favourite{
+color: red;  
+ }
+
+ul#fruits li{
+color: blue !important;
+}
+
+All the list elements will turn into a blue colour regardless of the Specificity Value.
+
+Priority of Inline CSS will be more than Internal CSS and External CSS.
+
+The priorities of the External CSS file and Internal CSS file can be changed by following the cascading rule. That means, whatever comes later will be followed.

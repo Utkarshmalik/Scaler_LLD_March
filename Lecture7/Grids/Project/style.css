@@ -1,0 +1,66 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: grid;
+    min-height:100vh;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "header header"
+                          "sidebar main"
+                          "footer footer";
+}
+
+.header{
+    background-color: lightcoral;
+    grid-area: header;
+}
+
+
+.sidebar{
+    background-color: whitesmoke;
+    grid-area: sidebar;
+}
+
+
+.main{
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "featured-products"
+                         "product-listings"
+                         "promotional-banner";
+    
+    grid-row-gap: 10px;
+
+    padding: 10px;
+    
+   
+}
+
+.featured-products{
+    background-color: yellow;
+    grid-area:featured-products;
+}
+
+.product-listings{
+    background-color: fuchsia;
+    grid-area:product-listings ;
+}
+
+.promotional-banner{
+    background-color: goldenrod;
+    grid-area: promotional-banner;
+}
+
+
+.footer{
+    background-color: orange;
+    grid-area: footer;
+}
+

@@ -1,0 +1,45 @@
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+aside {
+    background-color: #f0f0f0;
+    float: left;
+    width: 20%;
+}
+
+main {
+    float: left;
+    width: 80%;
+    padding: 20px;
+}
+
+@media screen and (max-width:700px) {
+
+    aside {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    
+    aside{
+        display: none;
+    }
+    
+}
+
+
+
+
+@media screen and (max-width:500px) {
+
+    aside{
+        display: none;
+    }
+    
+}

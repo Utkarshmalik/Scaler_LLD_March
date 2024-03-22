@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+
+        .parent {
+            margin-left: 1rem;
+            width: 70vh;
+            background-color: rgb(146, 85, 202);
+            height: 5000px;
+
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+
+            background-color: lightcoral;
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+            /* position: sticky;
+            top:30px; */
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        }
+
+
+        nav {
+            background-color: black;
+            height: 40px;
+            display: flex;
+            justify-content: space-evenly;
+            position: sticky;
+            top:0px;
+        }
+
+        li {
+            color: white;
+            display: inline-block;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <h2>Position:Sticky</h2>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Signup</li>
+        </ul>
+    </nav>
+
+
+
+    <div class="parent">
+
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+
+
+ 
+
+
+
+</body>
+
+</html>
