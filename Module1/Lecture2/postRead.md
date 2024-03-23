@@ -145,6 +145,79 @@ tables are used to organize and display data in a structured format. Tables cons
 
 ![](https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/049/120/original/upload_051534e2f8bbaa444c5fff971dbba317.png?1695110359)
 
+## HTML Forms
+
+Just like any other forms are used to collect information, in context of HTML it collects user input on a web page. They allow users to enter data, make selections, and submit that information to a server for processing. HTML forms are created using a combination of form-related tags and input elements such as
+
+1. `<form>`: tag defines the beginning of a form and contains the elements that make up the form, such as text fields, checkboxes, and buttons.
+2. `<input>`: The `<input>` tag is used to create various types of form input fields. The type attribute specifies the type of input field to be displayed. Common type values include:
+   - **text:** Creates a single-line text input.
+   - **password:** Creates a password input field (text is masked for security).
+   - **checkbox:** Creates a checkbox for binary (true/false) choices.
+   - **radio:** Creates a radio button for selecting one option from a group.
+   - **submit:** Creates a submit button to send the form data.
+   - **button:** Creates a generic button.
+   - **file:** Allows users to upload files.
+   - **date, email, number, and more:** Various input types for specific data formats.
+3. `<label>`: tag is used to associate a label with a form element, making the form more accessible and user-friendly. The for attribute of the `<label>` tag should match the id attribute of the form element it labels.
+4. `<select>`: tag creates a dropdown list, allowing users to select one option from a list of choices. It contains one or more `<option>` elements.
+5. `<option>`: tag defines an individual item in a `<select>` dropdown list. The value attribute specifies the value that will be sent to the server when the form is submitted.
+6. `<button>`: acts as an input element in HTML and is used for various purposes in a form including the submission of a form. We have different types of input elements as well such as checkboxes `<input type = "checkbox">`, radio buttons `<input type = "radio">`, and other input elements as needed to gather user input
+
+#### Pseudocode
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Examples</title>
+  </head>
+  <body>
+    <form>
+      <label>Name</label>
+      <input type="text" />
+
+      <label>Email</label>
+      <input type="email" />
+
+      <label>Phone</label>
+      <input type="number" maxlength="10" />
+
+      <label>age</label>
+      <input type="number" min="1" max="100" />
+
+      <label>Birthday</label>
+      <input type="date" min="1905 - 06 - 18" max="2002 - 06 - 10" />
+
+      <p>Food</p>
+      <label>Apple</label>
+      <input type="checkbox" />
+      <label>Orange</label>
+      <input type="checkbox" />
+      <label>Banana</label>
+      <input type="checkbox" />
+
+      <p>Gender</p>
+      <label>Male</label>
+      <input name="gender" value="male" type="radio" />
+      <label>Female</label>
+      <input name="gender" value="female" type="radio" />
+
+      <label>Eyecolor</label>
+      <select>
+        <option>Blue</option>
+        <option>Black</option>
+        <option>Red</option>
+      </select>
+    </form>
+  </body>
+</html>
+```
+
+#### Output:
+
+![](https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/049/121/original/upload_f466e18fe597bb978dd2f93f02a9c0f7.png?1695110510)
+
 ## Further Reading
 
 **Table Accessibility:**
