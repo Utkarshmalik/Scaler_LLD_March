@@ -1,0 +1,87 @@
+What is JavaScript?
+
+JavaScript is a language that is used to add interactivity to your websites, web apps etc..
+
+What jS engine does in detail ? Core Rensponsibilities ?
+
+A JavaScript engine is a crucial component of web browsers that interprets and executes JavaScript code. Here's a detailed breakdown of how a typical JavaScript engine works:
+
+Parsing: The engine begins by parsing the JavaScript code to create a data structure known as the Abstract Syntax Tree (AST). This tree represents the syntactic structure of the code, making it easier for the engine to analyze and execute.
+
+Compilation: The engine then converts the AST into an intermediate representation. This step may involve several optimizations to improve the performance of the code. Some engines use Just-In-Time (JIT) compilation techniques, where portions of the code are compiled into machine code at runtime for faster execution.
+
+Execution: The engine executes the code by traversing the intermediate representation. During execution, it manages the execution context, which includes variables, scope chains, and the call stack. The engine follows the execution context stack to keep track of function calls and variable scopes.
+
+Memory Management: JavaScript engines employ garbage collection mechanisms to manage memory efficiently. They automatically reclaim memory that is no longer in use, preventing memory leaks and improving overall performance.
+
+Optimizations: Modern JavaScript engines employ various optimization techniques to enhance performance. These include inline caching, function inlining, loop optimization, and many others. Engines continuously analyze the code during execution to identify optimization opportunities and adapt their strategies accordingly.
+
+Event Loop: In environments like web browsers, JavaScript execution is often asynchronous. The engine utilizes an event loop to handle asynchronous operations such as fetching resources from the network or responding to user interactions. The event loop ensures that asynchronous tasks are executed in a non-blocking manner, allowing the program to remain responsive.
+
+Host Environment Interaction: JavaScript engines interact with the host environment (e.g., the browser or Node.js runtime) to access external resources such as the DOM (Document Object Model), network requests, file system, etc. This interaction is facilitated through APIs provided by the host environment.
+
+Popular JavaScript engines include V8 (used in Google Chrome and Node.js), SpiderMonkey (used in Mozilla Firefox), and JavaScriptCore (used in Apple Safari). Each engine implements its own optimizations and features, but the overall process remains similar across different implementations.
+
+Variables in JavaScript
+
+var:
+var declarations are function-scoped.
+They are hoisted to the top of their function or global scope.
+
+Problems of Var keyword
+The var keyword allows the re-declaration of variables.
+
+In ES6, two keywords: let and const were introduced which does not allow the re-declaration of variables
+
+let:
+
+let declarations are block-scoped (scoped to the nearest enclosing {}).
+
+Variables declared with let can be updated but not re-declared within their scope.
+
+They are not hoisted to the top of their block.
+
+const:
+
+const declarations also are block-scoped like let.
+
+Variables declared with const must be initialized at the time of declaration and cannot be reassigned to a different value.
+
+Statically Typed Languages (e.g., C, C++, Java):
+
+In statically typed languages, the data types of variables are explicitly declared and checked at compile time.
+Variables are assigned a specific data type (such as integer, float, string) when they are declared, and this type is known at compile time.
+
+Dynamically Typed Languages (e.g., JavaScript, Python):
+
+In dynamically typed languages, variable types are determined implicitly at runtime.
+Variables can hold values of any type, and their types can change during execution.
+
+// Weakly Typed vs Strongly Typed
+
+// Weakly-typed languages make conversions between unrelated types implicitly;
+// whereas, strongly-typed languages don’t allow implicit conversions between unrelated types.
+
+Weakly Typed:
+
+In weakly typed languages, there is more flexibility in how data types are treated and converted.
+Weak typing allows for implicit type conversions without explicit instructions from the programmer.
+This can sometimes lead to unexpected behavior or errors if not carefully managed.
+
+Examples of weakly typed languages include JavaScript and PHP.
+
+var x="10";
+var y=5;
+var z= x+y;
+console.log(z); //105
+
+Strongly Typed:
+
+In strongly typed languages, type rules are strictly enforced, and implicit type conversions are limited.
+Strong typing often requires explicit type declarations and does not allow operations between incompatible types without explicit conversion.
+This can help prevent certain types of errors and make code more robust.
+Examples of strongly typed languages include Java, C++, and Swift.
+
+String x="10";
+int y=5;
+int z = x + y; // This would result in a compilation error because Java does not allow implicit conversion of a string to an integer
