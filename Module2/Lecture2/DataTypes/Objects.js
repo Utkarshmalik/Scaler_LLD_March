@@ -145,3 +145,27 @@ wife.address.city.name="Delhi";
 
 console.log(husband.address.country);
 console.log(husband.address.city.name);
+
+
+
+
+
+
+const person={
+    name:"Utkarsh",
+    age:29
+}
+
+
+let someVariable = "age";
+
+console.log(person.name);
+console.log(person.someVariable);
+
+
+console.log(person["name"]);
+console.log(person[someVariable]); console.log(person["age"]);  //29
+
+
+
+

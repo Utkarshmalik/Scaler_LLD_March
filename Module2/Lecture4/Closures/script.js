@@ -50,3 +50,8 @@ var parent=grandParent();
 var child = parent();
 var ans=child();
 console.log(ans);
+
+
+
+
+// what will happen in case of big application where functions are scatterred across the application. but out of 1000 fucntions which are interconnected. only 300 need closure approach and 700 are normal. does system check one by one all the functions whether they ar required in closure or not .

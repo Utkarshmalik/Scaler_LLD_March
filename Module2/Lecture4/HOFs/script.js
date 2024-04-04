@@ -1,66 +1,66 @@
 //  * HOF  -> are the function that accepts a fn as a parameter or returns a function
 
-// function doubleNumbers(arr){
+function doubleNumbers(arr){
 
-//   const result = [];
+  const result = [];
 
-//   for(let i=0;i<arr.length;i++){
-//     result.push(arr[i]*2);
-//   }
+  for(let i=0;i<arr.length;i++){
+    result.push(arr[i]*2);
+  }
 
-//   return result;
+  return result;
 
-// }
+}
 
-// function trippleNumbers(arr){
+function trippleNumbers(arr){
 
-//   const result = [];
+  const result = [];
 
-//   for(let i=0;i<arr.length;i++){
-//     result.push(arr[i]*3);
-//   }
+  for(let i=0;i<arr.length;i++){
+    result.push(arr[i]*3);
+  }
 
-//   return result;
+  return result;
 
-// }
-// const numbers = [1,2,3,4,5];
-// const doubledNumbers = doubleNumbers(numbers);
-// const trippledNumbers  = trippleNumbers(numbers);
+}
+const numbers = [1,2,3,4,5];
+const doubledNumbers = doubleNumbers(numbers);
+const trippledNumbers  = trippleNumbers(numbers);
 
-// console.log(doubledNumbers);
-// console.log(trippledNumbers);
-
-
+console.log(doubledNumbers);
+console.log(trippledNumbers);
 
 
 
-// function operateOnArray(arr, operation){
-
-//   const result = [];
-
-//   for(let i=0;i<arr.length;i++){
-//     result.push(operation(arr[i]));
-//   }
-
-//   return result;
-
-// }
-
-// function double(x){
-//   return x*2;
-// }
-
-// function tripple(x){
-//   return x*3;
-// }
 
 
-// const numbers = [1,2,3,4,5];
-// const doubledNumbers = operateOnArray(numbers,double);
-// const trippledNumbers  = operateOnArray(numbers,tripple);
+function operateOnArray(arr, operation){
 
-// console.log(doubledNumbers);
-// console.log(trippledNumbers);
+  const result = [];
+
+  for(let i=0;i<arr.length;i++){
+    result.push(operation(arr[i]));
+  }
+
+  return result;
+
+}
+
+function double(x){
+  return x*2;
+}
+
+function tripple(x){
+  return x*3;
+}
+
+
+const numbers = [1,2,3,4,5];
+const doubledNumbers = operateOnArray(numbers,double);
+const trippledNumbers  = operateOnArray(numbers,tripple);
+
+console.log(doubledNumbers);
+console.log(trippledNumbers);
 
 
 
