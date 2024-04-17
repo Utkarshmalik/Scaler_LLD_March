@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>querySelector() Demo</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="img/logo.jpg" alt="Logo" id="logo">
+        </div>
+        <nav class="primary-nav">
+            <ul>
+                <li class="menu-item current"><a href="#home">Home</a></li>
+                <li class="menu-item"><a href="#services">Services</a></li>
+                <li class="menu-item"><a href="#about">About</a></li>
+                <li class="menu-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the JS Dev Agency</h1>
+
+        <div class="container">
+            <section class="section-a">
+                <h2>UI/UX</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem placeat, atque accusamus voluptas
+                    laudantium facilis iure adipisci ab veritatis eos neque culpa id nostrum tempora tempore minima.
+                    Adipisci, obcaecati repellat.</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-b">
+                <h2>PWA Development</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni fugiat similique illo nobis quibusdam
+                    commodi aspernatur, tempora doloribus quod, consectetur deserunt, facilis natus optio. Iure
+                    provident labore nihil in earum.</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-c">
+                <h2>Mobile App Dev</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eos culpa laudantium consequatur ea!
+                    Quibusdam, iure obcaecati. Adipisci deserunt, alias repellat eligendi odit labore! Fugit iste sit
+                    laborum debitis eos?</p>
+                <button>Read More</button>
+            </section>
+        </div>
+    </main>
+    
+    <script>
+
+        // let element = document.querySelector("*");
+        // let elements = document.querySelectorAll("*");
+        // console.log(element);
+        //     console.log(elements);
+
+
+    // 2) Type selector
+
+    //  let firstHeading = document.querySelector('h1');
+    //  let heading2 = document.querySelectorAll('h2');
+
+    //  console.log(firstHeading);
+    //  console.log(heading2);
+
+    // 3) Class- selector
+
+    // let note = document.querySelector(".menu-item");
+    // console.log(note);
+    // let notes = document.querySelectorAll('.menu-item');
+    // console.log(notes)
+
+    // 4) ID Selector
+    let logo = document.querySelector('#logo');
+    console.log(logo);
+
+    //NA
+    // let logos = document.querySelectorAll('#logo');
+
+
+    </script>
+</body>
+
+</html>

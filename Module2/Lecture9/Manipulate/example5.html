@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="https://scaler.com" target="_blank" id="js">JavaScript Tutorial </a>
+
+
+    <script>
+
+    let link = document.querySelector('#js');
+
+    let target = link.getAttribute("target");
+
+    console.log(target);
+
+    let isNameAvailable = link.hasAttribute("name");
+    console.log(isNameAvailable);
+
+
+    link.removeAttribute("target");
+     target = link.getAttribute("target");
+
+    console.log(target);
+
+    </script>
+    
+</body>
+</html>

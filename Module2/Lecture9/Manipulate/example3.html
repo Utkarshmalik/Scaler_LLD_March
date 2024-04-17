@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="menu">
+        <li>Home</li>
+    </ul>
+
+
+    <script>
+
+        let li1 = document.createElement('li');
+        li1.textContent = 'Products';
+
+        let li2 = document.createElement('li');
+        li2.textContent = "About Us";
+
+
+        //select the ul element 
+        const menu = document.querySelector("#menu");
+
+        //append
+        menu.appendChild(li1);
+        menu.appendChild(li2);
+
+
+
+    </script>
+    
+</body>
+</html>

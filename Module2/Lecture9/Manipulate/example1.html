@@ -1,0 +1,31 @@
+<!-- let element = document.createElement(htmlTag); -->
+<!-- The document.createElement() accepts an HTML tag name and returns a new Node with the Element type. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //create a element 
+        let div = document.createElement('div');
+
+          // The innerHTML is a property of the Element that allows you to get or set the HTML markup contained within the element
+        //to add content within a tag : innerHTML
+        div.innerHTML = '<p> Hey! We are learning JS </p> ';
+
+
+        // The appendChild() is a method of the Node interface.The appendChild() method allows you to add a node to the end of the list of child nodes of a specified parent node. //parentNode.appendChild(childNode);
+
+        document.body.appendChild(div);
+        
+
+    </script>
+    
+</body>
+</html>

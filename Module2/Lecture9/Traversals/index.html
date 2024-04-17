@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+
+    <div>
+        
+        <ul id="menu">
+            <li class="first">Home</li>
+            <li>Products</li>
+            <li class="current">Customer Support</li>
+            <li>Careers</li>
+            <li>Investors</li>
+            <li>News</li>
+            <li class="last">About Us</li>
+        </ul>
+
+    </div>
+    <div>
+
+    </div>
+
+    <script>
+
+        // const note = document.querySelector(".note");
+        // console.log(note);
+        // console.log(note.parentNode);
+
+        // let firstChild = parentElement.firstChild; 
+
+        // let content = document.getElementById('menu');
+        // let firstChild = content.firstChild;
+        // let lastChild = content.lastChild;
+        // console.log(firstChild);
+        // console.log(lastChild);
+
+        // text node is inserted to maintain the whitespace between the opening < ul > and < li > tags.This whitespace creates a #text node.
+
+
+        // let content = document.getElementById('menu');
+        // let firstChild = content.firstElementChild;
+        // let lastChild = content.lastElementChild;
+        // console.log(firstChild);
+        // console.log(lastChild);
+
+
+
+        // let children = parentElement.childNodes;
+// The childNodes property returns all child elements with any node type
+
+
+    let menu = document.getElementById('menu');
+
+    let childNodes= menu.childNodes;
+
+    console.log(childNodes);
+
+
+    let children = menu.children;
+
+    console.log(children);
+
+
+
+
+
+        //let nextSibling = currentNode.nextElementSibling;
+
+    // let current = document.querySelector('.current');
+    // let nextSibling = current.nextElementSibling;
+    // let prevSibling = current.previousElementSibling;
+
+    // console.log(nextSibling);
+    //     console.log(prevSibling);
+
+    </script>
+
+
+</body>
+</html>
