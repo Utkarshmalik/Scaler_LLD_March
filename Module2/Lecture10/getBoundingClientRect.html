@@ -1,0 +1,51 @@
+<!-- The getBoundingClientRect() method in JavaScript returns the size of an element and its position relative to the
+viewport. It returns a DOMRect object containing properties such as top, left, right, bottom, width, and height. These
+properties represent the position and dimensions of the element's bounding rectangle. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getBoundingClientRect Example</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box"></div>
+
+    <script>
+
+        const box = document.getElementById("box");
+
+            // Get the bounding rectangle of the box element
+
+            const rect = box.getBoundingClientRect();
+
+            // Output the properties of the bounding rectangle
+            console.log('Top:', rect.top);
+            console.log('Left:', rect.left);
+            console.log('Right:', rect.right);
+            console.log('Bottom:', rect.bottom);
+            console.log('Width:', rect.width);
+            console.log('Height:', rect.height);
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!-- Event listeners in JavaScript are mechanisms that allow you to listen for and respond to events that occur in the
+browser or on a web page. Events can be triggered by user interactions, like clicking a button or moving the mouse, or
+by other actions such as the page finishing loading or data being received from a server. -->
+
+<!-- Event: An event is a signal that something has happened. It can be triggered by the user (like clicking a button) or by
+the browser (like finishing loading a page). Examples of events include click, mouseover, keydown, load, etc.
+
+Event Listener: An event listener is a function that waits for a specific event to occur and then executes some code in
+response. It "listens" for the event to happen and then triggers a function, or callback, when the event occurs.
+
+Attaching an Event Listener: You can attach an event listener to a DOM element using the addEventListener() method. This
+method takes two arguments: the type of event to listen for (e.g., "click", "mouseover") and the function to call when
+the event occurs (the event handler).
+
+const button = document.getElementById('myButton');
+
+button.addEventListener('click', function() {
+// code to execute when the button is clicked
+});
+
+Event Handler: The function that gets executed when the event occurs is called the event handler. This function receives
+an event object as an argument, which contains information about the event that occurred (such as the target element,
+the type of event, etc.).
+
+function handleClick(event) {
+// code to execute when the button is clicked
+}
+
+const button = document.getElementById('myButton');
+button.addEventListener('click', handleClick); -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+        <button id="btn-1"> Say Hello </button>
+
+        <div id="main">
+        </div>
+
+        <script>
+
+
+            const btn = document.querySelector("#btn-1");
+
+            btn.addEventListener("click", onBtnClick);
+
+            function onBtnClick(e){
+
+                const requiredDiv = document.querySelector("#main");
+
+                const p = document.createElement('p');
+                p.innerText = "Hello";
+
+                p.style.backgroundColor  = "yellow";
+                p.style.fontSize = "20px";
+                p.style.border = "2px solid black "
+
+                requiredDiv.appendChild(p);
+
+             
+            }
+
+
+        </script>
+        
+</body>
+</html>

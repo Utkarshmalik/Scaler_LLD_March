@@ -1,0 +1,95 @@
+<!-- Implement JavaScript functionality for a task management web application that allows users to individually remove tasks
+from a list or clear the entire list at once. The HTML template includes a list of tasks, each with a dedicated "delete"
+button, and a separate "Remove All" button for bulk deletion. Your solution should enable the "delete" buttons to remove
+their respective tasks from the list and the "Remove All" button to clear all tasks from the list simultaneously. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF - 8" />
+    <meta http-equiv="X - UA - Compatible" content="IE = edge" />
+    <meta name="viewport" content="width = device - width, initial-scale = 1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="removeAll">Remove All</button>
+    <ul>
+        <li>
+            <p>Task - 1</p>
+            <button class="delete_button">delete</button>
+        </li>
+        <li>
+            <p>Task - 2</p>
+            <button class="delete_button">delete</button>
+        </li>
+        <li>
+            <p>Task - 3</p>
+            <button class="delete_button">delete</button>
+        </li>
+        <li>
+            <p>Task - 4</p>
+            <button class="delete_button">delete</button>
+        </li>
+    </ul>
+    <script>
+        // Q- Make remove all button work  and make individual delete btn work
+
+              let removeAllBtn = document.querySelector("#removeAll");
+              let allDeleteButton = document.querySelectorAll(".delete_button");
+
+              let ul = document.querySelector("ul");
+              let allListItems =  ul.querySelectorAll("li");
+
+
+              removeAllBtn.addEventListener("click",function(){
+                console.log(allListItems);
+                for(let i=0;i<allListItems.length;i++){
+                    ul.removeChild(allListItems[i]);
+                }
+              })
+
+            for (let i = 0; i < allDeleteButton.length; i++) {
+
+        
+                
+                allDeleteButton[i].addEventListener("click",function(e){
+
+                    e.target.parentElement.remove();
+
+                })
+            }
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- In JavaScript, both remove() and removeChild() methods are used to remove elements from the DOM (Document Object Model),
+but they have different use cases and syntax.
+
+remove() Method:
+The remove() method is a modern approach to removing elements from the DOM. It is available on DOM elements and can be
+called directly on the element you want to remove. -->
+<!-- 
+element.remove();
+
+const elementToRemove = document.getElementById('myElement');
+elementToRemove.remove(); -->
+
+
+<!-- removeChild() Method:
+The removeChild() method is used to remove a specified child node from its parent node. This method is typically used
+when you have a reference to the parent node and want to remove a specific child node from it. -->
+<!-- 
+
+parentNode.removeChild(childNode);
+
+const parentElement = document.getElementById('parentElement');
+const childToRemove = document.getElementById('childElement');
+parentElement.removeChild(childToRemove); -->

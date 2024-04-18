@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click the button to highlight the text!</h2>
+
+    <p id="myParagraph">This is a paragraph. Click the button to highlight me!</p>
+
+    <button id="highlightButton">Highlight</button>
+
+    <script>
+        const highlightButton = document.getElementById('highlightButton');
+        const paragraph = document.getElementById('myParagraph');
+
+            highlightButton.addEventListener('click', function () {
+                 paragraph.classList.add("highlight");
+            })
+
+    </script>
+
+</body>
+
+</html
+<!-- 
+The classList property in the Document Object Model (DOM) is a read-only property that returns a live collection of the class attributes of the element. It provides a convenient way to access and manipulate the class names of an element. With classList, you can easily add, remove, and toggle CSS classes on an element, which is particularly useful for dynamically changing the appearance or behavior of elements in response to user interactions.
+
+Here are some of the most commonly used methods of classList:
+
+add(className): Adds a specified class to the element. If the class already exists in the element's class list, it will not add it again.
+
+remove(className): Removes a specified class from the element. If the class does not exist, it does nothing.
+
+contains(className): Checks if a specified class exists in the element's class list, returning true if it does and false otherwise. -->
