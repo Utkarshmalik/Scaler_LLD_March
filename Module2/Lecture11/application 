@@ -1,0 +1,19 @@
+<!-- Imagine we want to create a weather application the features of the application should be-
+
+
+It will have a search bar where you can enter any cities name and their will be a button to get it's weather Info.
+
+As soon as you click on the button you should be served with that cities weather Information in a decent looking card
+
+
+These properties should be shown compulsarily-
+
+City Name
+Temparature
+Condition (hot , humid , cold , Rainy etc)
+current date and time in the city
+
+Rest you can add any other property that you want to show!
+
+
+-->
