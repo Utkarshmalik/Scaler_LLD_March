@@ -1,0 +1,178 @@
+:root{
+
+    --pink:lightpink;
+    --blue:lightblue;
+    --purple:purple;
+    --green:lightgreen;
+    --light:white;
+
+}
+
+
+.toolbox{
+
+    background-color: black;
+    color: white;
+    height: 5rem;
+    display: flex;
+    gap:5rem;
+    align-items: center;
+}
+
+
+.toolbox-priority{
+    display: flex;
+    background-color: #393c3f;
+    margin-left: 5rem;
+    height: 70%;
+    align-items: center;
+    width: 20rem;
+    justify-content: space-evenly;
+}
+
+.action-btn{
+    display: flex;
+    width: 10rem;
+    justify-content: space-evenly;
+    height: 70%;
+    align-items: center;
+    background-color: var(--light);
+    color: black;
+}
+
+.color{
+    height: 1.8rem;
+    width: 3.5rem;
+    cursor: pointer;
+}
+
+.add-btn,.remove-btn{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.heading_cont{
+    display: flex;
+    text-align: center;
+    padding: 3rem;
+}
+
+.heading_pending{
+    width: 70%;
+}
+
+.heading_finished{
+
+    width: 30%;
+}
+
+.container{
+    min-height: 800px;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+    justify-content: space-evenly;
+}
+
+.container_wrapper{
+    display: flex;
+}
+
+.pending_cont{
+    width: 70%;
+    border-right: 2px solid gray;
+}
+
+.finished_cont{
+    width: 30%;
+}
+
+
+.ticket_cont{
+    height: 15rem;
+    width: 18rem;
+    background-color: #ecf0f1;
+    position: relative;
+}
+
+.ticket_color{
+    background-color: var(--pink);
+    height: 10%;
+}
+
+.ticket_id{
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.ticket_area{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.lock_unlock{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+}
+
+.model_cont{
+
+    position: fixed;
+    top:25vh;
+    left:25vw;
+    height: 50vh;
+    width: 50vw;
+    /* display: flex;  */
+    display: none;
+    box-shadow: 10px 10px 40px -5px black;
+}
+
+.textarea_cont{
+ height: 100%;
+ width: 75%;
+font-size: 2rem;
+resize: none;
+padding: 2rem;
+}
+
+.priority_color_cont{
+height: 100%;
+width: 25%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.priority_color {
+    height: 3rem;
+    width: 5rem;
+    cursor: pointer;
+}
+
+.active{
+    border:5px solid white;
+}
+
+
+
+
+
+.pink{
+    background-color: var(--pink)
+}
+.blue {
+    background-color: var(--blue);
+}
+.purple {
+    background-color: var(--purple);
+}
+.green {
+    background-color: var(--green);
+}

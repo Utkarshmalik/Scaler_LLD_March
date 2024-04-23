@@ -12,15 +12,12 @@ const fs = require("fs")
     console.log("Something went wrong while reading file 1");
  })
 
-
-
  promise2.then((function(data2){
     console.log("Content "+data2);
  }))
  .catch(function(err){
     console.log("Something went wrong while reading file 2");
  })
-
 
 
  promise3.then((function(data3){
