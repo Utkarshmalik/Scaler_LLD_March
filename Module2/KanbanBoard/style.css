@@ -5,6 +5,7 @@
     --purple:purple;
     --green:lightgreen;
     --light:white;
+    --red:red;
 
 }
 
@@ -97,7 +98,6 @@
 }
 
 .ticket_color{
-    background-color: var(--pink);
     height: 10%;
 }
 
@@ -175,4 +175,8 @@ width: 25%;
 }
 .green {
     background-color: var(--green);
+}
+
+.red {
+    color: var(--red);
 }
