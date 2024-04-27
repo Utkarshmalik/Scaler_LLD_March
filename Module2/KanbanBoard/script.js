@@ -7,6 +7,37 @@ const pendingContainer = document.querySelector(".pending_cont");
 const priorityMenuColors = document.querySelector(".toolbox-priority").children;
 const colors = ["pink","blue","purple","green"];
 
+
+var allTicketsViaLocalStorage  = localStorage.getItem("allTickets");
+
+var allTickets;
+
+if(allTicketsViaLocalStorage){
+    allTickets = JSON.parse(allTicketsViaLocalStorage);
+    populateUIWithExistingTickets();
+}else{
+    allTickets = [];
+}
+
+
+function populateUIWithExistingTickets(){
+
+
+    allTickets.forEach((ticket)=>{
+
+        const {content,color,id} = ticket;
+
+        createTicket(id,color,content,false);
+
+    })
+
+}
+
+
+
+
+
+
 for(let i=0;i<priorityMenuColors.length;i++){
 
     let priorityElement = priorityMenuColors[i];
@@ -73,7 +104,10 @@ model.addEventListener("keypress",(e)=>{
     //what is the text entered by the user
     const content = textArea.value;
 
-    createTicket(cColor,content);
+       const uid = new ShortUniqueId({ length: 10 });
+    const ticketId= uid.rnd();
+
+    createTicket(ticketId,cColor,content,true);
 
     //reset the text content 
     textArea.value="";
@@ -83,14 +117,11 @@ model.addEventListener("keypress",(e)=>{
 
 })
 
-function createTicket(priority,content){
-
+function createTicket(ticketId,priority,content,isNewTicket){
 
     const ticketContainer = document.createElement("div");
     ticketContainer.setAttribute("class","ticket_cont");
 
-     const uid = new ShortUniqueId({ length: 10 });
-    const ticketId= uid.rnd();
 
     ticketContainer.innerHTML = `
        <div class="ticket_color ${priority}"></div>
@@ -104,12 +135,62 @@ function createTicket(priority,content){
     const ticketColorElem = ticketContainer.querySelector(".ticket_color");
     ticketColorElem.addEventListener("click",onTicketColorClick);
 
-    ticketContainer.addEventListener("click",onClickTicketContainer);
+        const ticketArea = ticketContainer.querySelector(".ticket_area");
+    const lockBtn = ticketContainer.querySelector(".lock_unlock");
+    lockBtn.addEventListener("click", (e)=>handleLockUnlock(e,ticketArea));
+
+
+    ticketContainer.addEventListener("click",(e)=>onClickTicketContainer(e));
 
 
     //append in pending_cont
     pendingContainer.appendChild(ticketContainer);
 
+
+    const newTicket = {
+        id:ticketId,
+        color:priority,
+        content:content
+    }
+
+    //update the localstorage with this new ticket 
+    if(isNewTicket){
+    updateLocalStorage(newTicket);
+    }
+}
+
+
+function updateLocalStorage(newTicket){
+
+    allTickets.push(newTicket);
+
+    localStorage.setItem("allTickets",JSON.stringify(allTickets));
+
+}
+
+
+function handleLockUnlock(e,ticketArea){
+
+    
+
+    //if lock -> unlock it
+
+    const isLocked = e.target.classList.contains("fa-lock");
+
+    if(isLocked){
+
+        e.target.classList.remove("fa-lock");
+        e.target.classList.add("fa-unlock");
+        ticketArea.setAttribute("contenteditable","true");
+
+    }
+    else{
+        e.target.classList.remove("fa-unlock");
+        e.target.classList.add("fa-lock");
+        ticketArea.setAttribute("contenteditable","false");
+    }
+
+    //if unlock -> lock it
 }
 
 function onClickTicketContainer(e){
@@ -186,5 +267,7 @@ function removeActiveFromAll(){
 }
 
 }
+
+
 
 

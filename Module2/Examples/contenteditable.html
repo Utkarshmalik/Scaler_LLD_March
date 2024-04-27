@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editable Content Example</title>
+<style>
+    /* Some basic styling for demonstration purposes */
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    .editable {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Editable Content Example</h1>
+
+<div class="editable" contenteditable="true" >
+   This text can be edited by the user.
+</div>
+
+<div class="editable" contenteditable="true" >
+   This is another editable section.
+</div>
+
+<script>
+    // JavaScript code to handle the edited content
+    // For demonstration, this script simply logs the edited content to the console when the user clicks away from the editable element
+
+    // Get all elements with the 'editable' class
+    const editableElements = document.querySelectorAll('.editable');
+
+    // Add event listener for blur (when the element loses focus)
+    editableElements.forEach(element => {
+        element.addEventListener('blur', () => {
+            // Log the edited content to the console
+            console.log('Edited content:', element.textContent.trim());
+        });
+    });
+</script>
+
+</body>
+</html>
