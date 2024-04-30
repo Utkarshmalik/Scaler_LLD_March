@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #outer_box {
+            height: 10rem;
+            width: 10rem;
+            background-color: lightblue;
+        }
+
+
+        #inner_box {
+            height: 50%;
+            width: 50%;
+            background-color: lightgreen;
+            margin-top: 10px;
+        }
+
+
+        #button {
+            margin-top: 3px;
+            background-color: lightsalmon;
+            width: 50%;
+            margin-left: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1> Event Capturing </h1>
+
+    <div id="outer_box">
+
+        <div id="inner_box">
+
+            <div id="button">
+
+                Click me
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        const outerBox = document.querySelector("#outer_box");
+        const innerBox = document.querySelector("#inner_box");
+        const button = document.querySelector("#button");
+
+
+        button.addEventListener("click", (e) => {
+            console.log("Button was clicked ", e.target, "cTarget", e.currentTarget);
+        },true)
+
+        innerBox.addEventListener("click", (e) => {
+            console.log("inner box was clicked", e.target, "cTarget", e.currentTarget);
+        },true)
+
+
+        outerBox.addEventListener("click", (e) => {
+            console.log("outer box was clicked ", e.target, "cTarget", e.currentTarget);
+
+        },true)
+
+        document.addEventListener("click", (e) => {
+            console.log("body was clicked", e.target, "cTarget", e.currentTarget);
+        },true)
+
+
+    </script>
+
+
+
+</body>
+
+</html>

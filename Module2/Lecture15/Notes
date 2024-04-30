@@ -1,0 +1,9 @@
+What is Event Propagation?
+
+Event propagation refers to the process of how events are dispatched and processed in the Document Object Model (DOM) hierarchy of elements in web development.
+
+There are two main phases of event propagation: capturing phase and bubbling phase.
+
+Capturing phase: In this phase, the event is captured by the outermost element and then propagated downwards through its ancestors to the target element. This phase allows you to intercept events at the root of the DOM tree and handle them before they reach their target.
+
+Bubbling phase: Once the event reaches the target element, it enters the bubbling phase, during which the event bubbles up from the target element through its ancestors back to the root of the DOM tree. This phase allows multiple elements to respond to the same event, potentially triggering event handlers attached to ancestor elements.

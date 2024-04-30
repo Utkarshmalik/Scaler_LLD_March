@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.star{
+
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.rating { 
+    text-align: center;
+}
+
+.filled{
+    color:gold;
+}

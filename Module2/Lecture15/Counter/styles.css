@@ -1,0 +1,33 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.counter{
+    display: flex;
+    align-items: center;
+}
+
+.btn{
+    font-size: 20px;
+    background-color: lightblue;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    padding: 15px;
+}
+
+span{
+        font-size: 20px;
+        text-align: center;
+}
+
+
+.btn:hover{
+    background-color: darkblue;
+}
