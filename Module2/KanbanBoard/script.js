@@ -5,6 +5,7 @@ const priorityColors = document.querySelectorAll(".priority_color");
 const textArea = document.querySelector(".textarea_cont");
 const pendingContainer = document.querySelector(".pending_cont");
 const priorityMenuColors = document.querySelector(".toolbox-priority").children;
+const toolBoxPriorityContainer = document.querySelector(".toolbox-priority");
 const colors = ["pink","blue","purple","green"];
 
 
@@ -35,17 +36,12 @@ function populateUIWithExistingTickets(){
 
 
 
+toolBoxPriorityContainer.addEventListener("click",(e)=>{
 
-
-
-for(let i=0;i<priorityMenuColors.length;i++){
-
-    let priorityElement = priorityMenuColors[i];
-  
-
-    priorityElement.addEventListener("click",(e)=>{
-        console.log("filter the tickets of only this color ",e.target);
-
+    if(e.target===e.currentTarget){
+        return;
+    }
+    
         const selectedColor = e.target.classList[1];
 
         const allTickets = document.querySelectorAll(".ticket_cont");
@@ -65,23 +61,66 @@ for(let i=0;i<priorityMenuColors.length;i++){
                  ticket.style.display="block"
             }
 
-        }
-    })
+        }    
 
+})
 
-  
-      priorityElement.addEventListener("dblclick",()=>{
+toolBoxPriorityContainer.addEventListener("dblclick",(e)=>{
 
-          const allTickets = document.querySelectorAll(".ticket_cont");
-
+    if(e.target===e.currentTarget){
+        return;
+    }
+        const allTickets = document.querySelectorAll(".ticket_cont");
         for(let i=0;i<allTickets.length;i++){
             const ticket = allTickets[i];
             ticket.style.display="block"
         }
-    })
-    
+})
 
-}
+
+
+// for(let i=0;i<priorityMenuColors.length;i++){
+
+//     let priorityElement = priorityMenuColors[i];
+
+//     priorityElement.addEventListener("click",(e)=>{
+//         console.log("filter the tickets of only this color ",e.target);
+
+//         const selectedColor = e.target.classList[1];
+
+//         const allTickets = document.querySelectorAll(".ticket_cont");
+
+//         for(let i=0;i<allTickets.length;i++){
+
+//             const ticket = allTickets[i];
+//             const ticktColorElem = ticket.querySelector('.ticket_color');
+//             const ticketColor = ticktColorElem.classList[1];
+
+             
+//             if(ticketColor!==selectedColor){
+
+//                 ticket.style.display="none";
+//             }else{
+
+//                  ticket.style.display="block"
+//             }
+
+//         }
+//     })
+  
+//       priorityElement.addEventListener("dblclick",()=>{
+
+//           const allTickets = document.querySelectorAll(".ticket_cont");
+
+//         for(let i=0;i<allTickets.length;i++){
+//             const ticket = allTickets[i];
+//             ticket.style.display="block"
+//         }
+//     })
+
+// }
+
+
 
 addBtn.addEventListener("click",()=>{
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .container { 
+
+            border: 2px solid black;
+            height: 10rem;
+            width: 10rem;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="red">red</div>
+        <div class="blue">blue</div>
+        <div class="green">green</div>
+
+    </div>
+
+    <script>
+
+        const parent = document.querySelector(".container");
+
+        parent.addEventListener("click",(e)=>{
+
+            if(e.target.classList.contains("container")){
+                return;
+            }
+
+            const color = e.target.getAttribute("class");
+
+            e.currentTarget.style.backgroundColor = color;
+        })
+
+
+    </script>
+    
+</body>
+</html>
