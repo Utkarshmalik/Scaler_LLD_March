@@ -1,0 +1,15 @@
+1.The Need of Optimzing your Events and requests
+2.Debouncing and it's implementation
+3.Throttling and it's Implementation
+4.Async/Defer to load Scripts
+
+<!--
+
+input.addEventLisener("chanage",(e)=>{
+
+    let value = input.value;
+
+    let listOfProducts = makeNetworCall(value);
+
+    display(listOfProducts)
+}) -->
