@@ -1,0 +1,31 @@
+1. Search Input:
+
+
+Scenario: As the user types in a search input field, you want to perform a search operation. Instead of sending a request for every keystroke, you debounce the search function to avoid unnecessary API calls.
+javascript
+Copy code
+const searchInput = document.getElementById('searchInput');
+const performSearch = debounce(query => {
+  // Make API call with the search query
+  console.log(`Searching for: ${query}`);
+}, 300);
+
+searchInput.addEventListener('input', event => {
+  const query = event.target.value;
+  performSearch(query);
+});
+
+2. Autosave in Forms:
+Scenario: You have a form with autosave functionality, but you don't want to save the form data after every keystroke. Debouncing helps delay the autosave function until the user has stopped typing.
+javascript
+Copy code
+const formInput = document.getElementById('formInput');
+const autosaveForm = debounce(formData => {
+  // Save form data to server
+  console.log('Autosaving form data:', formData);
+}, 1000);
+
+formInput.addEventListener('input', event => {
+  const formData = event.target.value;
+  autosaveForm(formData);
+});

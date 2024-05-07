@@ -1,0 +1,22 @@
+Throttling and debouncing are both techniques used in software development, particularly in event handling or function execution, to control the rate at which a function is invoked.
+
+Throttling:
+Throttling ensures that a function is called at most once in a specified amount of time. If the function is called multiple times within that time period, only the first call is executed, and subsequent calls are ignored until the time period expires. Throttling guarantees that the function will be executed periodically, but at a controlled rate.
+
+For example, imagine you have a scroll event listener on a webpage that triggers some action. By applying throttling, you ensure that the action is triggered only once every, say, 100 milliseconds, even if the scroll event fires more frequently.
+
+Debouncing:
+
+Debouncing, on the other hand, delays the execution of a function until after a certain amount of time has passed since the last invocation of the function. If the function is called multiple times within the specified time period, the timer resets each time, and the function is only executed after the specified period of inactivity. This is particularly useful when dealing with rapid, repeated events like keystrokes or mouse movements.
+
+For example, in a search bar, you might want to perform a search operation only after the user has stopped typing for a brief moment. Debouncing helps in delaying the search until the user has finished typing, thus reducing the number of unnecessary search requests.
+
+Key Difference:
+
+The main difference between throttling and debouncing lies in how they control the rate of function execution:
+
+Throttling limits the number of times a function can be called over a time period by ignoring subsequent calls until the time period expires.
+
+Debouncing delays the execution of a function until after a certain period of inactivity, ensuring that the function is only executed once after the activity stops for the specified duration.
+
+In essence, throttling regulates the frequency of function calls, while debouncing regulates the timing of function calls based on the absence of activity.

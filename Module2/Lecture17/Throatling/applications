@@ -1,0 +1,58 @@
+1. Mouse Move Events:
+Scenario:
+You want to track mouse movement but don't need to capture every single movement event, especially if the user moves the mouse rapidly.
+
+Implementation:
+
+javascript
+Copy code
+const trackMousePosition = throttle(event => {
+  // Process the mouse position
+  console.log(`Mouse position: (${event.clientX}, ${event.clientY})`);
+}, 200);
+
+document.addEventListener('mousemove', trackMousePosition);
+In this example, the trackMousePosition function will be called at most once every 200 milliseconds during mouse movement.
+
+
+
+
+3. Scroll Events:
+Scenario:
+You want to handle scroll events but limit the rate at which the associated function is called.
+
+Implementation:
+
+javascript
+Copy code
+const handleScroll = throttle(() => {
+  // Perform actions based on scroll
+  console.log('Scrolling...');
+}, 300);
+
+window.addEventListener('scroll', handleScroll);
+The handleScroll function will be executed at most once every 300 milliseconds during a scroll event.
+
+
+
+
+4. Form Input Validation:
+Scenario:
+You are validating form input on keyup events, but you don't need to validate on every key press.
+
+Implementation:
+
+javascript
+Copy code
+const validateFormInput = throttle(inputValue => {
+  // Validate form input
+  console.log(`Validating: ${inputValue}`);
+}, 500);
+
+const formInput = document.getElementById('myFormInput');
+formInput.addEventListener('keyup', event => {
+  validateFormInput(event.target.value);
+});
+The validateFormInput function is throttled to execute at most once every 500 milliseconds during keyup events.
+
+These examples illustrate how throttling can be applied to various scenarios to control the rate of function execution based on events.

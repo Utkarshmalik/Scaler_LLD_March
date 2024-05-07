@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body,
+        html {
+            height: 3000px;
+            /* Ensure there's enough space to scroll */
+        }
+    
+        .status {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+        }
+    </style>
+
+
+</head>
+<body>
+        <div class="status">Scroll position: <span id="scrollPosition">0</span></div>
+
+
+        <script>
+
+            // window.addEventListener("scroll",()=>{
+
+            //     document.getElementById('scrollPosition').textContent = window.scrollY;
+            //     console.log("make a network call");
+
+            // })
+
+            var lastScrollTime=0;
+
+            window.addEventListener("scroll",updateScrollPosition);
+
+            function updateScrollPosition(){
+
+                var now = new Date().getTime();
+
+                if(now - lastScrollTime > 500){ // Throttle period is 100ms
+                    document.getElementById('scrollPosition').textContent = window.scrollY;
+                    console.log("make a network call");
+                    lastScrollTime  = now;
+                }
+            }
+
+        </script>
+</body>
+</html>
+
+

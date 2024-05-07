@@ -46,3 +46,8 @@ button.addEventListener("click",throatledButtonClick);
 function makeANetworkCall(e){
     console.log("making a network call with input ", e.target.value);
 }
+
+
+
+// This throttling technique is particularly useful for improving performance in web applications. It reduces the number of times potentially expensive operations are executed during rapid, continuous events like scrolling. By limiting the frequency of updates, the script minimizes the workload on the browser, leading to smoother scrolling and a better user experience.
+
