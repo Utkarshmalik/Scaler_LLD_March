@@ -62,21 +62,21 @@
 
 
 
-// let arr1  = new Array(1,2,3,4,5,6);
-// let arr2  = new Array(6,7,8,9,10,11,12);
+let arr1  = new Array(1,2,3,4,5,6);
+let arr2  = new Array(6,7,8,9,10,11,12);
 
 
-// console.log(arr1.__proto__  === Array.prototype);
-// console.log(arr1.__proto__.__proto__ === Object.prototype);
-// console.log(arr1.__proto__.__proto__.__proto__ === null );
-// console.log(Array.prototype.__proto__ === Object.prototype);
-// console.log(Object.prototype.__proto__);
+console.log(arr1.__proto__  === Array.prototype);
+console.log(arr1.__proto__.__proto__ === Object.prototype);
+console.log(arr1.__proto__.__proto__.__proto__ === null );
+console.log(Array.prototype.__proto__ === Object.prototype);
+console.log(Object.prototype.__proto__);
 
-// console.log(arr2.__proto__  === Array.prototype);
-// console.log(arr1.__proto__  === arr2.__proto__);
+console.log(arr2.__proto__  === Array.prototype);
+console.log(arr1.__proto__  === arr2.__proto__);
 
-// console.log(arr1.toString());
-// console.log(arr2.toString());
+console.log(arr1.toString());
+console.log(arr2.toString());
 
 
 console.log(arr1.valueOf());
@@ -107,3 +107,8 @@ console.log(Object.prototype);
 
 // console.log(obj1.toString());
 // console.log(obj2.toString());
+
+
+let s="dewfw";
+
+console.log(String.prototype);
