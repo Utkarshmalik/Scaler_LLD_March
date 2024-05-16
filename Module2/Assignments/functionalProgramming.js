@@ -79,3 +79,20 @@ const isPositive = (currentValue) => currentValue > 0;
 const array1 = [1, 30, 39, 29, 10, 13];
 
 console.log(array1.every(isPositive));
+
+
+// Question 5: Find the First Negative Value
+
+// Problem Description:
+// Write a JavaScript function named findFirstNegative that finds and returns the first negative number in an array using the find() method.
+
+// Inputs:
+
+// An array of numbers.
+// Outputs:
+
+// A number representing the first negative number in the array or undefined if there are no negative numbers.
+
+const firstNegative   = arr.find((number)=>{
+    return number < 0;
+})

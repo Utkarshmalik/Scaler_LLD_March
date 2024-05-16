@@ -1,4 +1,4 @@
-Class1-Introduction to JS
+// Class1-Introduction to JS
 
 
 // Problem 1: String Manipulation

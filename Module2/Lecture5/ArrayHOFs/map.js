@@ -5,16 +5,16 @@ array.map(function(currentValue, index, array) {
 });
 
 
-// let arr=[1,2,3,4,5];
+let arr=[1,2,3,4,5];
 
 
-// let squareArr = [];
+let squareArr = [];
 
-// for(let i=0;i<arr.length;i++){
-//     squareArr.push(arr[i]*arr[i]);
-// }
+for(let i=0;i<arr.length;i++){
+    squareArr.push(arr[i]*arr[i]);
+}
 
-// console.log(squareArr);
+console.log(squareArr);
 
 
 
@@ -52,16 +52,16 @@ array.map(function(currentValue, index, array) {
 //Doubling each number in an array:
 
 
-// const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
 
-// function operation(element,index){
-// return element * 2;
-// }
+function operation(element,index){
+return element * 2;
+}
 
-//  const doubledNumbers   = numbers.map(operation)
+ const doubledNumbers   = numbers.map(operation)
 
-// console.log(doubledNumbers);
+console.log(doubledNumbers);
 
 
 // Converting Fahrenheit temperatures to Celsius:

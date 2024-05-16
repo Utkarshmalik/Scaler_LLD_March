@@ -74,33 +74,33 @@
 // Implement public methods deposit and withdraw that allow users to modify the balance property. Ensure that withdrawals cannot result in a negative balance.
 
 
-class BankAccount{ 
+// class BankAccount{ 
 
-    #accountNumber;
-    #balance;
+//     #accountNumber;
+//     #balance;
 
-    constructor(){
-        this.#accountNumber  = this.#generateAccountNumber();
-        this.#balance = 0;
-    }
+//     constructor(){
+//         this.#accountNumber  = this.#generateAccountNumber();
+//         this.#balance = 0;
+//     }
 
-    #generateAccountNumber(){
-        return   Math.floor(Math.random() * 1000000);
-    }
+//     #generateAccountNumber(){
+//         return   Math.floor(Math.random() * 1000000);
+//     }
 
 
-    deposit(amount){
-        this.#balance+=amount;
-        return this.#balance;
-    }
-    withDraw(amount){
+//     deposit(amount){
+//         this.#balance+=amount;
+//         return this.#balance;
+//     }
+//     withDraw(amount){
 
-        if(amount > this.#balance){
-         return "Insufficient Funds";
-        }
+//         if(amount > this.#balance){
+//          return "Insufficient Funds";
+//         }
 
-        this.#balance-=amount;
-        return this.#balance;
-    }
+//         this.#balance-=amount;
+//         return this.#balance;
+//     }
 
-}
+// }
