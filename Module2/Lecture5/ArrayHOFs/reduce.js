@@ -7,9 +7,9 @@
 
 
 
-// array.reduce(function(accumulator, currentValue, index, array) {
-//   // Return the updated accumulator value
-// }, initialValue);
+array.reduce(function(accumulator, currentValue, index, array) {
+  // Return the updated accumulator value
+}, initialValue);
 
 
 // function(accumulator, currentValue, index, array): This is a function to be called for each element in the array. It takes four arguments:

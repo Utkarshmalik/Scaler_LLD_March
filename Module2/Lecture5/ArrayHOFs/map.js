@@ -36,17 +36,17 @@ console.log(squareArr);
 
 
 
-// let arr=[1,2,3,4,5];
+let arr=[1,2,3,4,5];
 
 
 
-// let squaredValues = arr.map( function(element,index){
-//     console.log(element,index);
-//     return element * element;
-// } );
+let squaredValues = arr.map( function(element,index){
+    console.log(element,index);
+    return element * element;
+} );
 
 
-// console.log(squaredValues);
+console.log(squaredValues);
 
 
 //Doubling each number in an array:
