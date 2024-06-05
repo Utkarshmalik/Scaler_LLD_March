@@ -1,3 +1,4 @@
+import Navbar from "../Navbar/Navbar";
 import User from "../User/User";
 import "./Dashboard.css";
 import usersData from "./userData";
@@ -14,21 +15,31 @@ import usersData from "./userData";
     
     }
 
-function Dashboard(){
+function Dashboard(props){
     return <div style={{background:"black",color:"white",height:"100%"}} > 
-        
+
+    <Navbar onLogout={props.onLogout} />
+    
         <h1> User Dashboard  </h1>
-        
-        {
-            renderUsers()
-        }
-       
+        {renderUsers()}
        
     </div>
 }
 
 
 export default Dashboard;
+
+
+
+// State is a built-in object in React components that allows you to store property values that belong to the component.
+
+// It is used to hold data or information about the component that may change over time. 
+
+// When the state changes, the component re-renders to reflect the new state.
+
+
+
+
 
 
 
