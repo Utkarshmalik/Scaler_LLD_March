@@ -3,6 +3,8 @@ import "./User.css";
 
 function User(props){
 
+
+
     const userData  = props.userObj;
 
     return <div className="user" >
@@ -14,6 +16,8 @@ function User(props){
         <p> {userData.email} </p>
 
         <p> {userData.phone} </p> 
+
+        <span onClick={()=>props.onUserDelete(userData.id)} className="cross"> X </span>
 
     </div>
 }

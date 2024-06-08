@@ -6,3 +6,17 @@
     align-items: center;
     gap: 1rem;
 }
+
+.search{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    margin: 20px 5px;
+}
+
+.search input {
+    width: 30%;
+    height: 35px;
+}

@@ -13,6 +13,7 @@ function NavbarComp(props) {
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
+          <h5 className='m-2' >Total Users :  {props.users.length} </h5>
           <button onClick={props.onLogout}> Logout </button>
         </Container>
       </Navbar>

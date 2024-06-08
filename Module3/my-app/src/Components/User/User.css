@@ -8,4 +8,16 @@
     width: 300px;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.cross{
+
+    position: absolute;
+    top:5px;
+    right: 10px;
+    cursor: pointer;
+    background: white;
+    color: black;
+    padding:2px;
 }
