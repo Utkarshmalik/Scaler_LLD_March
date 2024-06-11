@@ -1,17 +1,39 @@
 import Navbar from "../Navbar/Navbar";
 import "./Dashboard.css";
 import UserList from "../UserList/UserList";
-import { useState } from "react";
-import usersData from "./userData";
+import { useEffect, useState } from "react";
+import Loader from "../common/Spinner/Spinner";
 
+var usersData=null;
 
 function Dashboard(props){
 
-    const [users, setUsers] = useState(usersData);
+    console.log("Inside Dashbaord Component");
+
+    const [users, setUsers] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
+
+    useEffect(()=>{
+        console.log("making an API call");
+
+        fetch('http://dummyjson.com/users')
+        .then(res => res.json())
+        .then((res)=>{
+             usersData = res.users;
+             console.log(usersData);
+             setIsLoading(false);
+             setUsers(res.users);
+        })
+        .catch(err=>{
+            setIsLoading(false);
+            setIsError(true);
+        })
+    },[]);
 
     const onInputChange = (e)=>{
-        console.log(users);
+        console.log(usersData);
         
         const updatedSearchValue = e.target.value;
 
@@ -32,7 +54,7 @@ function Dashboard(props){
     }
 
 
-    return <div style={{background:"black",color:"white",height:"100%"}} > 
+    return <div className="min-height-vh-100" style={{background:"black",color:"white",height:"100%"}} > 
 
 
 
@@ -45,7 +67,19 @@ function Dashboard(props){
 
         </div>
 
-        <UserList users={users} setUsers={setUsers} />
+        {
+            (isLoading) ? <Loader/> : 
+                    <UserList users={users} setUsers={setUsers} />
+
+        }
+
+        {
+
+            isError && 
+            <h4 className="text-center"> Unable to fetch data  </h4>
+
+        }
+
        
     </div>
 }

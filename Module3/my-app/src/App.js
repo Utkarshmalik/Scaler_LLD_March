@@ -1,11 +1,12 @@
 import Dashboard from "./Components/Dashboard/Dashboard"
+import DocumentCounter from "./Components/DocumentCounter/DocumentCOunter";
 import Login from "./Components/Login/Login";
 import {useState} from "react";
 
 
 function App(){
 
-  const [isLoggedIn , setIsLoggedin] = useState(false);
+  const [isLoggedIn , setIsLoggedin] = useState(true);
 
 
   function onLogin(){
@@ -15,6 +16,8 @@ function App(){
   function onLogout(){
     setIsLoggedin(false);
   }
+
+  // return <DocumentCounter/>
 
   return <div style={{minHeight:"100vh"}}>
 

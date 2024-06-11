@@ -1,0 +1,27 @@
+Mounting
+
+Mounting is the stage where the component is being created and inserted into the UI. It's like setting up the stage before the play begins. For example, imagine you're setting up a new bulletin board in a classroom. This is the first time it's put up on the wall, ready to display information.
+
+In React, this is where the component is initially constructed. It sets up its initial state, fetches any necessary data if needed, and then renders the layout for the first time. This is typically where you would put code that needs to run when the component appears for the first time.
+
+Updating
+
+Updating occurs after the component has been mounted and involves any changes to the component’s state or props (the parameters passed into a component). It's like updating the bulletin board with new notices or information as needed throughout the school year.
+
+In React, a component updates in response to user interactions, data receptions, or prop changes. This might involve recalculating the state, or it might result in a re-rendering of the user interface. For example, if a user fills out a form on a webpage, each keystroke might update the component’s state, causing the component to render some visual feedback.
+
+Unmounting
+
+Unmounting is the final phase of the component lifecycle. This is like taking the bulletin board down at the end of the school year. The component is being removed from the screen, and this is where you clean up after your component: cancelling any outgoing network requests, removing any event listeners, or clearing any caches or data that were set up for the component.
+
+In React, when a component is no longer needed, it is unmounted to free up resources. This helps in preventing memory leaks and ensuring that components that aren't being used don't consume resources unnecessarily.
+
+The useEffect hook in React allows you to perform side effects and handles all these three phases in your function components.
+
+Side effects are operations that can affect other components or cannot be done during rendering, such as data fetching, subscriptions, or manually changing the DOM.
+
+
+useEffect takes two arguments:
+
+A function that contains the code for the side effect.
+An optional array of dependencies that determines when the effect should rerun.
