@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { WatchListContext } from "../../context/WatchListContext";
 
 
 function Pagination({pageNumber, previousPageFn, nextPageFn}){
+
+    const watchListContextValue = useContext(WatchListContext);
+    console.log(watchListContextValue);
 
     return <div className=" text-white flex justify-center h-[50px] bg-gray-400 w-full mt-8 items-center">
 

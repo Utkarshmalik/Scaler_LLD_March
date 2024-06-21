@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TypewriterSpinner from "../common/Spinner/Spinner";
 import axios from "axios";
 import MovieCard from "../MovieCard/MovieCard";
 import Pagination from "../Pagination/Pagination";
+import { WatchListContext } from "../../context/WatchListContext";
 
 
 function Movies(){
@@ -10,23 +11,14 @@ function Movies(){
     const [movies, setMovies] = useState([]);
     const [loading, setIsLoading] = useState(true);
     const [pageNumber, setPageNumber] = useState(1);
-    const [watchList, setWatchList] = useState([]);
+
+    // const [watchList, setWatchList] = useState([]);
+
+    const watchListContextValue = useContext(WatchListContext);
+
+    const {watchList , setWatchList, addToWatchList, removeFromWatchList}  = watchListContextValue;
 
 
-      const addToWatchList = (movieObj)=>{
-        const updatedWatchList = [...watchList, movieObj];
-        setWatchList(updatedWatchList);
-        localStorage.setItem("watchList", JSON.stringify(updatedWatchList));
-      }
-
-      const removeFromWatchList = (movieObj)=>{
-
-        const updatedWatchList = watchList.filter((movie)=>{
-            return movie.id != movieObj.id;
-        })
-        setWatchList(updatedWatchList);
-        localStorage.setItem("watchList", JSON.stringify(updatedWatchList));
-      }
 
 
        useEffect(()=>{
@@ -36,12 +28,12 @@ function Movies(){
             let movies = res.data.results;
 
            
-            var watchListData = JSON.parse(localStorage.getItem("watchList"));
-            if(watchListData===null){
-                watchListData=[];
-            }
+            // var watchListData = JSON.parse(localStorage.getItem("watchList"));
+            // if(watchListData===null){
+            //     watchListData=[];
+            // }
 
-            setWatchList(watchListData);
+            // setWatchList(watchListData);
 
             setMovies(movies);
             setIsLoading(false);

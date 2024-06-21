@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TypewriterSpinner from "../../Components/common/Spinner/Spinner";
 import genreids from "../../utilities/generes";
 import { all } from "axios";
+import { WatchListContext } from "../../context/WatchListContext";
 
 var allMovies;
 
 
 function WatchList(){
 
-     const [movies, setMovies] = useState([]);
+    //  const [movies, setMovies] = useState([]);
+
+    const {watchList:movies, setWatchList:setMovies, removeFromWatchList}  = useContext(WatchListContext);
     const [loading, setIsLoading] = useState(true);
     const [search, setSearch] = useState("");
 
@@ -37,40 +40,26 @@ function WatchList(){
      
     })
 
-    const onMovieDelete = (movieId)=>{
-
-        console.log(movieId);
-
-         const updatedWatchList = movies.filter((movie)=>{
-            return movie.id != movieId;
-        })
-
-        setMovies(updatedWatchList);
-        localStorage.setItem("watchList", JSON.stringify(updatedWatchList));
-    }
 
 
     const genres = Array.from(genreSet);
     genres.unshift("All Genres");
     console.log(genres);
 
-    useEffect(()=>{
-          var watchListData = JSON.parse(localStorage.getItem("watchList"));
-            if(watchListData===null){
-                watchListData=[];
-            }
-            setIsLoading(false);
-            console.log(watchListData);
-            setMovies(watchListData); 
-            allMovies = watchListData;
-    },[])
+    // useEffect(()=>{
+    //       var watchListData = JSON.parse(localStorage.getItem("watchList"));
+    //         if(watchListData===null){
+    //             watchListData=[];
+    //         }
+    //         setIsLoading(false);
+    //         console.log(watchListData);
+    //         setMovies(watchListData); 
+    //         allMovies = watchListData;
+    // },[])
 
     
 
 
-      if(loading){
-        return <TypewriterSpinner/>
-    }
 
     return <div>
 
@@ -134,7 +123,7 @@ function WatchList(){
                                      {  genreids[movie.genre_ids[0]]}
                                 </td>
 
-                                <td onClick={()=>onMovieDelete(movie.id)} className="text-red-500">
+                                <td onClick={()=>removeFromWatchList(movie)} className="text-red-500">
                                     Delete
                                 </td>
 
