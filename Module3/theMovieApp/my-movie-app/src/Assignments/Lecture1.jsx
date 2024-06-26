@@ -309,20 +309,60 @@
 // export default App; 
 
 
-import { useState } from 'react';
+// import { useState } from 'react';
 
-export default function App() {
-  const [score, setScore] = useState(0);
+// export default function App() {
+//   const [score, setScore] = useState(0);
 
-  function increment(incrmement) {
-    setScore(score + incrmement);
-  }
+//   function increment(incrmement) {
+//     setScore(score + incrmement);
+//   }
 
-  return (
-    <>
-      <button onClick={() => increment(1)}>+1</button>
-      <button onClick={() => { increment(3) }}>+3</button>
-      <h1>Score: {score}</h1>
-    </>
-  )
+//   return (
+//     <>
+//       <button onClick={() => increment(1)}>+1</button>
+//       <button onClick={() => { increment(3) }}>+3</button>
+//       <h1>Score: {score}</h1>
+//     </>
+//   )
+// }
+
+
+
+
+
+import React from 'react';
+export const SettingsContext = React.createContext();
+
+export  function SettingProvider({children}){
+    
+     const [theme, setTheme] = React.useState('light');
+   const [language, setLanguage] = React.useState('English');
+
+   return (
+
+    <SettingsContext.Provider value={{theme,language,setTheme:toggleTheme, setLanguage:toggleLanguage}} >
+        {children}
+    </SettingsContext.Provider>
+   )
+
 }
+
+
+//App.js
+
+import React from 'react';
+import { SettingsProvider } from './SettingsContext';
+import UserSettings from './UserSettings';
+import Profile from './Profile';
+
+function App() {
+  return (
+    <SettingsProvider>
+      <UserSettings />
+      <Profile />
+    </SettingsProvider>
+  );
+}
+
+export default App;
