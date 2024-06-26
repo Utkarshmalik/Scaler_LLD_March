@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store/store'
 import Todo from './pages/Todo/Todo'
 import User from './pages/Users/User'
+import Gallery from './Assignments/Lecture1'
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
               <Route path='/todo' element={<Todo/>} />
               <Route path='/counter' element={<Counter/>} />
               {/* <Route path='/' element={<Context/>} /> */}
-              <Route path='/' element={<Home/>} />
+              <Route path='/' element={<Gallery/>} />
               <Route path="/watchlist" element={<WatchList/>} />
             </Routes>
      </WatchListContextWrapper>
