@@ -1,47 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
+import SumPage from './pages/SumPage';
+import ItemsPage from './pages/itemsPage';
 
 function App() {
 
-  const [HomePage, setHomePage] = useState(null);
-  const [AboutPage, setAboutPage] = useState(null);
-  const [ContactPage, setContactPage] = useState(null);
+  const HomePage = lazy(()=> import("./pages/HomePage"));
+  const AboutPage = lazy(()=> import("./pages/AboutPage"));
+  const ContactPage  = lazy(()=> import("./pages/ContactPage"));
 
-  useEffect(()=>{
-    import("./pages/HomePage")
-    .then((module) => setHomePage(()=> module.default))
-  },[]);
-
-  const loadAboutPage = ()=>{
-    import("./pages/AboutPage")
-    .then((module) => setAboutPage(()=> module.default))
-  }
-
-    const loadContactPage = ()=>{
-    import("./pages/ContactPage")
-    .then((module) => setContactPage(()=> module.default))
-  }
 
   return (
     
     <BrowserRouter>
 
-    <Navbar loadAboutPage={loadAboutPage} loadContactPage={loadContactPage} />
-
+    <Navbar />
+    <Suspense fallback={<div> Loading....</div>} >
       <Routes>
-
-        <Route path="/" element={  HomePage ? <HomePage/>  : <div> Loading....</div> } />
-        <Route path="/about" element={ AboutPage ? <AboutPage/> : <div> Loading....</div>  } />
-        <Route path="/contact" element={ ContactPage ? <ContactPage/> : <div> Loading....</div> } />
-
-        
+        <Route path="/" element={ <HomePage/> } />
+        <Route path="/sum" element={ <SumPage/> } />
+        <Route path="/items" element={ <ItemsPage/> } />
+        <Route path="/about" element={<AboutPage/>   } />
+        <Route path="/contact" element={  <ContactPage/> } />
       </Routes>
-
+      </Suspense>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
+
+
