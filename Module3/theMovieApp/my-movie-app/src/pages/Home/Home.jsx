@@ -4,6 +4,7 @@ import Movies from "../../Components/Movies/Movies";
 
 function Home(){
 
+
     return <>
     <Banner/>
     <Movies/>

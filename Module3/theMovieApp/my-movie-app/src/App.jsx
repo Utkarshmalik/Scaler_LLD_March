@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store/store'
 import Todo from './pages/Todo/Todo'
 import User from './pages/Users/User'
-import Gallery from './Assignments/Lecture1'
+import AuthHoc from './hoc/AuthHoc'
 
 function App() {
 
@@ -21,12 +21,33 @@ function App() {
       <WatchListContextWrapper>
             <Navbar/>
             <Routes>
-              <Route path='/user' element={<User/>} />
-              <Route path='/todo' element={<Todo/>} />
+              <Route path='/user' element={ 
+
+                <AuthHoc>
+              <User/>
+              </AuthHoc>
+              
+              } />
+              <Route path='/todo' element={
+
+                <AuthHoc>
+                 <Todo/>
+                </AuthHoc>
+              
+              
+              } />
               <Route path='/counter' element={<Counter/>} />
-              {/* <Route path='/' element={<Context/>} /> */}
-              <Route path='/' element={<Gallery/>} />
-              <Route path="/watchlist" element={<WatchList/>} />
+              <Route path='/' element={
+              
+              <Home/>
+            
+            } />
+              <Route path="/watchlist" element={
+              <AuthHoc>
+              <WatchList/>
+              </AuthHoc>
+
+              } />
             </Routes>
      </WatchListContextWrapper>
       </BrowserRouter>

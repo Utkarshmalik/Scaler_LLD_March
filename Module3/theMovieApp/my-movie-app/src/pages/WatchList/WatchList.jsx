@@ -9,6 +9,7 @@ var allMovies;
 
 function WatchList(){
 
+
     //  const [movies, setMovies] = useState([]);
 
     const {watchList:movies, setWatchList:setMovies, removeFromWatchList}  = useContext(WatchListContext);
