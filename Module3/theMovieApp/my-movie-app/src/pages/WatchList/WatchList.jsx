@@ -60,7 +60,13 @@ function WatchList(){
 
     
 
-
+const onSortingMovies = () =>{
+// console.log("hi");
+// e.preventDefault();
+var updateSortedMovies = allWatchlistlocaldata.sort((a, b)=> {return a.vote_average-b.vote_average});
+setWatchList(updateSortedMovies);
+// console.log(updateSortedMovies);
+}
 
     return <div>
 
@@ -94,7 +100,7 @@ function WatchList(){
 
                     <tr>
                         <th> Name </th>
-                        <th> Ratings </th>
+                        <th onClick={()=>onSortingMovies()}>Rating</th>
                         <th> Popularity </th>
                         <th> Genre </th>
 
