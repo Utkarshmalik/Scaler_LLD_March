@@ -1,0 +1,28 @@
+
+
+Collection : Products 
+
+{
+  "_id": ObjectId("61e65529b6fc4670e05a1c7a"),
+  "name": "Smartphone",
+  "brand": "XYZ",
+  "price": 699,
+  "specs": {
+    "display": "6.5 inches",
+    "storage": "128GB",
+    "camera": "Quad-camera setup"
+  }
+}
+
+{
+  "_id": ObjectId("61e65545b6fc4670e05a1c7b"),
+  "name": "Laptop",
+  "brand": "ABC",
+  "price": 1299,
+  "specs": {
+    "display": "15.6 inches",
+    "storage": "512GB SSD",
+    "RAM": "16GB",
+    "processor": "Intel Core i7"
+  }
+}

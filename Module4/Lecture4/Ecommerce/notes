@@ -1,0 +1,18 @@
+1. text/html
+
+Description: This content type indicates that the body of the HTTP message is HTML.
+Usage: Typically used for serving web pages.
+
+2. application/json
+   Description: This content type indicates that the body of the HTTP message is JSON (JavaScript Object Notation).
+   Usage: Commonly used for API responses and requests.
+
+3. application/x-www-form-urlencode : This content type is used to send form data in URL-encoded forma, ypically used for form submissions via HTTP POST method.
+   name=John+Doe&age=30&city=New+York
+
+4. multipart/form-data
+
+Description: This content type is used for form submissions that include file uploads.
+Usage: Used when a form includes file input elements.
+
+Smarr

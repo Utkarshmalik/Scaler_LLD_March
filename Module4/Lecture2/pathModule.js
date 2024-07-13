@@ -23,3 +23,11 @@ const baseName = path.basename(filePath);
 // const fullPath = path.resolve('docs','file.txt');
 // console.log(fullPath);
 
+
+
+
+const arr1=[1,2,3,4,5];
+
+const newArr =[8,9,0,...arr1];
+
+console.log(newArr);
