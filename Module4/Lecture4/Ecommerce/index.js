@@ -1,7 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
-
+const bodyParser =  require("body-parser");
+const { ObjectId } = require("mongodb");
+const productRoutes = require("./src/Routes/product.routes");
+const userRoutes = require("./src/Routes/user.routes");
 
 const app = express();
 
@@ -15,6 +17,15 @@ mongoose.connect(
         console.log(err);
     })
 
+
+    app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+   app.use(bodyParser.json())
+
+   
+
+   productRoutes(app);
+   userRoutes(app);
 
 
 
