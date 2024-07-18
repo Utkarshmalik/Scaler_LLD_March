@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser =  require("body-parser");
 const { ObjectId } = require("mongodb");
 const productRoutes = require("./src/Routes/product.routes");
-const userRoutes = require("./src/Routes/user.routes");
+const authRoutes = require("./src/Routes/auth.routes");
 
 const app = express();
 
@@ -25,7 +25,7 @@ mongoose.connect(
    
 
    productRoutes(app);
-   userRoutes(app);
+   authRoutes(app);
 
 
 
