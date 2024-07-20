@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const { userTypes, userStatus } = require("../utils/constants");
 
 
-//userId:"utmaik"
 
 
 const userSchema = new mongoose.Schema({
@@ -25,8 +24,15 @@ const userSchema = new mongoose.Schema({
     },
     createdAt:{
         type:Date,
-        immutable:true,
-        default:()=>Date.now()
+        default:()=>Date.now(),
+        get: (date)=> {
+            const dd=  String(date.getDate()).padStart(2,'0');
+            const mm =  String(date.getMonth()+1).padStart(2,'0');
+            const yyyy = date.getFullYear();
+
+           return `${dd}-${mm}-${yyyy}`;
+     }
+
     },
     userType:{
         type:String,

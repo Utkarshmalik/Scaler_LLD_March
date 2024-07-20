@@ -24,6 +24,7 @@ mongoose.connect(
 
    
 
+
    productRoutes(app);
    authRoutes(app);
 

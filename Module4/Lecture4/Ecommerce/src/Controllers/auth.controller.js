@@ -1,6 +1,7 @@
 const UserModel = require("../Models/user.model");
 const bcrypt = require('bcrypt');
 const { userTypes, userStatus } = require("../utils/constants");
+var jwt = require('jsonwebtoken');
 
 const signUp = async (req,res)=>{
 
@@ -88,6 +89,8 @@ const signIn = async (req,res)=>{
 
         const user = await UserModel.findOne({userId:userId});
 
+        console.log(user.createdAt);
+
         if(!user){
                 return res.status(400).send({message:"Invalid UserId! Please try again"});
         }
@@ -100,7 +103,17 @@ const signIn = async (req,res)=>{
             return res.status(400).send({message:"Invalid Password! Please try again"});
         }
 
-        return res.status(200).send({message:"Login Successful"});
+        const token = jwt.sign({id:user.userId},"myrandmomsecret",{ expiresIn: '1h' });
+
+
+        return res.status(200).send({
+            name:user.name,
+            userId:user.userId,
+            email:user.email,
+            userType:user.userType,
+            userStatus:user.userStatus,
+            accessToken:token
+        });
 
     }
     catch(err){

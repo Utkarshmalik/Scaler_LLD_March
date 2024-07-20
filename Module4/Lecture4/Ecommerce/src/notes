@@ -1,0 +1,15 @@
+1. Header
+   The header typically consists of two parts: the type of token (JWT) and the signing algorithm being used, such as HMAC SHA256 or RSA.
+
+{
+"alg": "HS256",
+"typ": "JWT"
+}
+
+2. Payload
+
+The payload contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims:
+
+Registered claims: Predefined claims which are not mandatory but recommended, e.g., iss (issuer), x (expiration time), sub (subject), aud (audience).
+Public claims: Custom claims created to share information, e.g., name, role.
+Private claims: Custom claims agreed upon between parties, e.g., user_id.
