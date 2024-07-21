@@ -89,7 +89,7 @@ const signIn = async (req,res)=>{
 
         const user = await UserModel.findOne({userId:userId});
 
-        console.log(user.createdAt);
+        console.log(user);
 
         if(!user){
                 return res.status(400).send({message:"Invalid UserId! Please try again"});

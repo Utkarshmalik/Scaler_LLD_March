@@ -4,6 +4,7 @@ const bodyParser =  require("body-parser");
 const { ObjectId } = require("mongodb");
 const productRoutes = require("./src/Routes/product.routes");
 const authRoutes = require("./src/Routes/auth.routes");
+const cors = require('cors')
 
 const app = express();
 
@@ -17,6 +18,8 @@ mongoose.connect(
         console.log(err);
     })
 
+
+    app.use(cors());
 
     app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
