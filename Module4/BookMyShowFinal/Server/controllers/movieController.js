@@ -21,7 +21,6 @@ const addMovie  = async (req,res)=>{
 
 
 const getAllMovies  = async (req,res)=>{
-
      try{
 
         const allMovies = await Movies.find({});
@@ -85,7 +84,6 @@ const updateAMovieById  = async (req,res)=>{
             success:false
         })
     }
-
 }
 
 

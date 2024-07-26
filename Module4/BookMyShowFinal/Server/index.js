@@ -16,7 +16,8 @@ app.use(bodyParser.json());
 require("./routes/movieRoutes")(app);
 require("./routes/theatreRoutes")(app);
 require("./routes/userRoutes")(app);
-
+require("./routes/showRoutes")(app);
+require("./routes/bookingRoutes")(app);
 
 
 

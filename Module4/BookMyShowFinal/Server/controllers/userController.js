@@ -81,8 +81,132 @@ const getCurrentUser = async (req,res)=> {
 
 }
 
+
+const forgetPassword  =  async (req,res)=>{
+
+  const email = req.body.email;
+
+  if(!email){
+    return res.status(401).send({
+      success:false,
+      message:"Please enter email for forget password"
+    })
+  };
+
+
+  try{
+
+      let user  = await User.findOne({email:req.body.email});
+
+      if(user==null){
+        return res.status(404).send({
+      success:false,
+      message:"User not found for this email"
+    })
+      }
+
+
+      //email is correct 
+      const otp = otpGenerator();
+
+      user.otp = otp;
+      user.otpExpiry =  Date.now() +  15000;
+
+
+      await user.save();
+
+
+
+      //send to email 
+      console.log("Sent the following OTP to email ", otp);
+
+      res.status(200).send({
+        status:"success",
+        message:"OTP Sent to your email"
+      })
+
+  }
+  catch(err){
+
+  }
+
+
+
+}
+
+const resetPassword =  async (req,res)=>{
+
+  //otp , newPassword 
+
+
+  const {otp, password} = req.body;
+
+  if(!otp || !password){
+      return res.status(401).json({
+        status: "failure",
+        message: "invalid request"
+      })
+  }
+
+
+  //find the user i attached this otp with 
+
+  try{
+     const user = await User.findOne({otp:otp});
+
+
+     if(user==null){
+       return res.status(404).json({
+        status: "failure",
+        message: "OTP is incorrect"
+      })
+     }
+
+     //otp has expired 
+
+     if(Date.now() > user.otpExpiry){
+      return res.status(404).json({
+        status: "failure",
+        message: "OTP is expired"
+      })
+     }
+
+
+
+     console.log("Save the new password");
+
+
+     user.otp=null;
+     user.otpExpiry = null;
+
+     await user.save();
+
+
+     return res.status(200).send({
+      status:"success",
+      message:"Password Reset Successful"
+     })
+
+
+  }catch(err){
+
+
+  }
+
+
+
+}
+
 module.exports = {
     signUp,
     login,
-    getCurrentUser
+    getCurrentUser,
+    forgetPassword,
+    resetPassword
+}
+
+
+
+function otpGenerator(){
+      return   Math.floor(((Math.random() * 10000)+ 90000));
 }

@@ -33,6 +33,22 @@ const verifyToken  =  (req,res,next)=>{
 }
 
 
+
+const verifyAdmin = (req,res,next) => {
+
+     const userDetails  = req.userDetails;
+   
+
+     if(!userDetails.isAdmin){
+        return res.status(403).send({message:"OOPS! you are not authorised to acccess this route"})
+    }
+
+    next();
+
+}
+
+
 module.exports = {
-    verifyToken
+    verifyToken,
+    verifyAdmin
 }
