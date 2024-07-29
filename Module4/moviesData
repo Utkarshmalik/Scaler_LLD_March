@@ -1,0 +1,185 @@
+Movies Data 
+
+
+{
+    "success": true,
+    "message": "All movies have been fetched!",
+    "data": [
+        {
+            "_id": "669cc3d34d637ba306f38f47",
+            "title": "Jalsa",
+            "description": "Jalsa is a drama that tells the story of a conflict between a celebrated journalist and her cook. It explores the concept of power dynamics and classicism. It is currently streaming on Prime Video",
+            "duration": 120,
+            "genre": "Comedy",
+            "language": "English",
+            "releaseDate": "2024-04-18T00:00:00.000Z",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMTRlNzY5MTEtOTZkZS00ZDEzLTgyN2YtZDJhNDRmMjdkOWI5XkEyXkFqcGdeQXVyNTM1MzM4Nzk@._V1_.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4584d637ba306f38f4a",
+            "title": "The Enigma",
+            "description": "The Enigma is a gripping thriller about a detective unraveling a series of cryptic murders. It delves into the psychology of the human mind. Available on Netflix.",
+            "duration": 135,
+            "genre": "Thriller",
+            "language": "English",
+            "releaseDate": "2023-12-06T00:00:00.000Z",
+            "poster": "https://m.media-amazon.com/images/M/MV5BNTI5ODU3N2UtM2QzNS00NjM1LWExNzMtNjgzYWQ5MWNkYTJmXkEyXkFqcGdeQXVyMjA0MzYwMDY@._V1_.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4a24d637ba306f38f4f",
+            "title": "Mystic Shores",
+            "description": "Mystic Shores is a fantasy adventure following a young girl's journey through a mystical land to discover her true destiny. Streaming now on Disney+.",
+            "duration": 110,
+            "genre": "Fantasy",
+            "language": "English",
+            "releaseDate": "2021-12-25T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDkYXR-dZ_L_5ZHMhUoAQnSUtaIbfIb7fVlTYoAWESzbpJiQcpMKVcOg6C2vTe8lmbMrY&usqp=CAU",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4a94d637ba306f38f51",
+            "title": "Rajdhani Express",
+            "description": "Rajdhani Express is an action-packed drama about a group of passengers caught in a terrorist plot on a speeding train. Now on Hotstar.",
+            "duration": 150,
+            "genre": "Action",
+            "language": "Hindi",
+            "releaseDate": "2022-05-01T00:00:00.000Z",
+            "poster": "https://qqcdnpictest.mxplay.com/pic/c4437c16dbd7d32889b42bc68541af97/en/16x9/640x360/eros_now_d494ad2540a882a84b98ef99b42ab566_badged_1668242781267.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4af4d637ba306f38f53",
+            "title": "Café Paris",
+            "description": "Café Paris is a romantic comedy set in the charming streets of Paris, following the love story of a barista and an aspiring artist. Available on Netflix.",
+            "duration": 100,
+            "genre": "Romance",
+            "language": "French",
+            "releaseDate": "2023-02-14T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyS2C5HYfRnsM1ey6EIwQGAkiJfiwwRBukPA&s",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4b54d637ba306f38f55",
+            "title": "Samurai's Path",
+            "description": "Samurai's Path is a historical epic depicting the journey of a young samurai seeking to restore his family's honor. Watch it on Prime Video.",
+            "duration": 145,
+            "genre": "Historical",
+            "language": "Japanese",
+            "releaseDate": "2022-11-21T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVUKvmIPd18O5XDCf1o4olkLtvGdxiWR_6SQ&s",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4bb4d637ba306f38f57",
+            "title": "The Quantum Realm",
+            "description": "The Quantum Realm is a sci-fi adventure exploring the mysteries of quantum physics and parallel universes. Streaming now on HBO Max.",
+            "duration": 130,
+            "genre": "Sci-Fi",
+            "language": "English",
+            "releaseDate": "2023-07-30T00:00:00.000Z",
+            "poster": "https://upload.wikimedia.org/wikipedia/en/3/30/Ant-Man_and_the_Wasp_Quantumania_poster.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4c14d637ba306f38f59",
+            "title": "Lost in Havana",
+            "description": "Lost in Havana is a musical drama about a young musician finding his rhythm in the vibrant streets of Havana. Available on Hulu.",
+            "duration": 125,
+            "genre": "Musical",
+            "language": "Spanish",
+            "releaseDate": "2022-03-19T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzL8bgA0WtV5zQx5Mz3t_NTHPAXNQssdke1Q&s",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4c74d637ba306f38f5b",
+            "title": "Aussie Outback",
+            "description": "Aussie Outback is an adventure film following a group of friends on a thrilling expedition through the Australian wilderness. Streaming on Disney+.",
+            "duration": 140,
+            "genre": "Adventure",
+            "language": "English",
+            "releaseDate": "2022-08-05T00:00:00.000Z",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMzVlMTU0MjQtZjYxZi00YjEyLWE1N2QtNWQ4M2I0NjcwZmYyXkEyXkFqcGdeQXVyMzI1MjM2Njk@._V1_.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4cc4d637ba306f38f5d",
+            "title": "Secrets of Cairo",
+            "description": "Secrets of Cairo is a mystery drama unraveling the hidden secrets of ancient Egypt through a modern-day archaeological dig. Available on Netflix.",
+            "duration": 115,
+            "genre": "Mystery",
+            "language": "Arabic",
+            "releaseDate": "2023-10-10T00:00:00.000Z",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMGViMjQ1OWMtOTBmNS00M2Y4LWJjNmYtYzE4MTM2MmU0ODIzXkEyXkFqcGdeQXVyMjE4NzUxNDA@._V1_FMjpg_UX1000_.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4d44d637ba306f38f5f",
+            "title": "Berlin Nights",
+            "description": "Berlin Nights is a dark drama exploring the underground club scene in Berlin and the lives intertwined within it. Watch it on Prime Video.",
+            "duration": 105,
+            "genre": "Drama",
+            "language": "German",
+            "releaseDate": "2022-01-17T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-8fiJgx2ky8YGicnZlUXkHvpPLjFhnuZcKw&s",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4da4d637ba306f38f61",
+            "title": "The Last Frontier",
+            "description": "The Last Frontier is a western tale of a lone cowboy's quest for justice in the wild west. Available on HBO Max.",
+            "duration": 125,
+            "genre": "Western",
+            "language": "English",
+            "releaseDate": "2023-02-28T00:00:00.000Z",
+            "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/0/06/The_Last_Frontier_%282020_film%29.jpg/220px-The_Last_Frontier_%282020_film%29.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4df4d637ba306f38f63",
+            "title": "Vikram's Vengeance",
+            "description": "Vikram's Vengeance is a high-octane action film about a former spy coming out of retirement to save his kidnapped daughter. Now on Hotstar.",
+            "duration": 140,
+            "genre": "Action",
+            "language": "Tamil",
+            "releaseDate": "2022-09-15T00:00:00.000Z",
+            "poster": "https://im.jdmagicbox.com/comp/jd_social/news/2022jul11/9kmcqtu584-kiu87f3iej.jpg?clr=",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4e44d637ba306f38f65",
+            "title": "Echoes of Silence",
+            "description": "Echoes of Silence is a psychological horror film that delves into the eerie happenings in a small, isolated town. Streaming on Hulu.",
+            "duration": 95,
+            "genre": "Horror",
+            "language": "English",
+            "releaseDate": "2022-10-31T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2o1r2dRpoutoqnCJh4c5vNTII-gCLN2_BfQ&s",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4eb4d637ba306f38f67",
+            "title": "Tokyo Drift",
+            "description": "Tokyo Drift is a fast-paced drama about the underground drifting culture in Tokyo. Available on Netflix.",
+            "duration": 130,
+            "genre": "Drama",
+            "language": "Japanese",
+            "releaseDate": "2023-04-09T00:00:00.000Z",
+            "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p159790_p_v10_an.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "669cc4fe4d637ba306f38f69",
+            "title": "The Art of Deception",
+            "description": "The Art of Deception is a heist thriller where a group of art thieves plan the ultimate museum robbery. Watch it on Prime Video.",
+            "duration": 120,
+            "genre": "Thriller",
+            "language": "English",
+            "releaseDate": "2022-07-18T00:00:00.000Z",
+            "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7xzVU8YMWG4nPjBkO8_eJc6aNvRJtz1j-Kw&s",
+            "__v": 0
+        }
+    ]
+}
