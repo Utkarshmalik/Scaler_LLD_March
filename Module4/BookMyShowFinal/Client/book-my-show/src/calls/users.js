@@ -24,9 +24,40 @@ export const RegisterUser  = async (userObj)=>{
 export const LoginUser  = async (value) =>{
 
     try{
+    const response  = await axiosInstance.post("http://localhost:3000/login",{
+            email:value.email,
+            password:value.password
+        })
 
-    const response  = await axiosInstance.post("http://localhost:3000/ecomm/api/v1/auth/signin",{
-            userId:value.userId,
+        return response;
+
+    }catch(err){
+        return err.response;
+    }
+}
+
+
+export const ForgetPassword  = async (value) =>{
+
+    try{
+    const response  = await axiosInstance.patch("http://localhost:3000/forgetPassword",{
+            email:value.email
+        })
+
+        return response;
+
+    }catch(err){
+        return err.response;
+    }
+
+}
+
+
+export const ResetPassword  = async (value) =>{
+
+    try{
+    const response  = await axiosInstance.patch("http://localhost:3000/resetPassword",{
+            otp:value.otp,
             password:value.password
         })
 

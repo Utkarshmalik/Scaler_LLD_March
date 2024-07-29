@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './hoc/ProtectedRoute';
+import ForgetPassword from './pages/Forget/Forget';
+import ResetPage from './pages/Reset';
+import SingleMoviePage from './pages/SingleMovie';
 
 function App() {
   return (
@@ -13,9 +16,12 @@ function App() {
 
     <Routes>
 
-      <Route path='/' element={ <ProtectedRoute> <Home/> </ProtectedRoute> }/>
+      <Route path='/' element={  <Home/> }/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
+      <Route path='/forget' element={<ForgetPassword/>}/>
+      <Route path='/reset' element={<ResetPage/>}/>
+      <Route path='/movie/:id' element={ <ProtectedRoute> <SingleMoviePage/> </ProtectedRoute> }/>
 
     </Routes>
 

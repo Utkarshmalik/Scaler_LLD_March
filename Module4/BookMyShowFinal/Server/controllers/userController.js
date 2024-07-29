@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { sendEmail } = require("../utils/NotificationUtil");
 
 
 const signUp = async  (req, res) => {
@@ -110,15 +111,19 @@ const forgetPassword  =  async (req,res)=>{
       const otp = otpGenerator();
 
       user.otp = otp;
-      user.otpExpiry =  Date.now() +  15000;
-
+      user.otpExpiry =  Date.now() +  10*60*10000;
 
       await user.save();
 
 
-
       //send to email 
       console.log("Sent the following OTP to email ", otp);
+      sendEmail(
+        [user.email], 
+        "OTP for Verification",
+      `<div> <h1> OTP : ${otp}  </div> `
+      , null);
+
 
       res.status(200).send({
         status:"success",
@@ -173,8 +178,11 @@ const resetPassword =  async (req,res)=>{
 
 
 
-     console.log("Save the new password");
+     const salt = await bcrypt.genSalt(10);
+    const hashPwd = bcrypt.hashSync(password, salt);
 
+
+     user.password = hashPwd;
 
      user.otp=null;
      user.otpExpiry = null;

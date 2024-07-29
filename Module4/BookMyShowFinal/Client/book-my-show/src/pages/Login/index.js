@@ -7,17 +7,16 @@ const Login = () => {
   const onFinish = async (values)=>{
     const response  = await LoginUser(values);
 
-    if(response.status=="200"){
+    if(response.data.success==true){
       console.log(response);
       message.success("Login Successful");
-      localStorage.setItem("token",response.data.accessToken);
+      localStorage.setItem("token",response.data.token);
       window.location.href="/";
 
     }else{
       message.error(response.data.message);
     }
   }
-
 
   return (
     <div>
@@ -33,17 +32,17 @@ const Login = () => {
           <Form onFinish={onFinish} layout="vertical">
     
             <Form.Item
-                label="UserId"
-                htmlFor="userId"
-                name="userId"
+                label="email"
+                htmlFor="email"
+                name="email"
                 className="d-block"
                 
-                rules={[{ required: true, message: "UserId is required" }]}
+                rules={[{ required: true, message: "EmailId is required" }]}
               >
                 <Input
-                  id="userId"
-                  type="text"
-                  placeholder="Enter your UserId"
+                  id="email"
+                  type="email"
+                  placeholder="Enter your EmailId "
                  
                 ></Input>
               </Form.Item>
@@ -78,6 +77,9 @@ const Login = () => {
           <div>
             <p>
               New User? <Link to="/register">Register Here</Link>
+            </p>
+            <p>
+              Forget Password ? <Link to="/forget">click here </Link>
             </p>
           </div>
         </section>
