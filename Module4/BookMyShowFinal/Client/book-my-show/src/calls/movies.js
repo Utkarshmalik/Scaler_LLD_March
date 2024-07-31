@@ -11,3 +11,14 @@ export const getAllMovies = async ()=>{
 
     }
 }
+
+export const getMovieById = async (id)=>{
+    try{
+       const response = await axiosInstance.get(`http://localhost:3000/movies/${id}`);
+        return response.data;
+
+    }catch(err){
+        console.log(err);
+
+    }
+}

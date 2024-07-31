@@ -2,6 +2,7 @@ import { Col, Row, message } from "antd";
 import { useEffect, useState } from "react";
 import { getAllMovies } from "../../calls/movies";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 const Home = () => {
 
@@ -52,7 +53,9 @@ const Home = () => {
 
               <img
               onClick={()=>{
-                navigate(`/movie/${movie._id}`)
+                navigate(`/movie/${movie._id}?date=${
+                  moment().format("YYYY-MM-DD")
+                }`)
               }}
               src={movie.poster}
               alt="movie poster"
