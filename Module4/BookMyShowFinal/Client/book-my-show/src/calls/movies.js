@@ -2,10 +2,14 @@ import { axiosInstance } from "."
 
 
 export const getAllMovies = async ()=>{
+
     try{
+
+        while(1){
        const response = await axiosInstance.get("http://localhost:3000/movies");
         return response.data;
-
+        }
+        
     }catch(err){
         console.log(err);
 

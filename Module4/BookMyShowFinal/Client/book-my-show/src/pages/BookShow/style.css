@@ -1,0 +1,33 @@
+.seat-btn{
+
+    background: #f6f6f6;
+    width: 40px;
+    height: 35px;
+    border:1px solid darkgray;
+    text-align: center;
+    font-size: 13px;
+    margin: 1px;
+    cursor: pointer;
+}
+
+.seat-btn.booked{
+    background-color: #ddd;
+}
+
+.seat-btn.selected {
+    background-color: green;
+    border-color: green;
+    color: white;
+
+}
+
+.cardBottomPrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border:2px solid lightgrey;
+    padding:20px;
+    width: 50%;
+    margin: 50px auto;
+    font-size: 15px;
+}

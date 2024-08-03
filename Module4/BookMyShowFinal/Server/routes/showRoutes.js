@@ -7,10 +7,10 @@ module.exports = (app)=>{
 
     app.post("/shows",[verifyToken, verifyAdmin],createNewShow);
 
-    app.get("/shows",[verifyToken, verifyAdmin], getAllShows);
-    app.get("/showsByMovie",[verifyToken, verifyAdmin], getAllShows);
+    app.get("/shows",[verifyToken], getAllShows);
+    app.get("/showsByMovie",[verifyToken], getAllShows);
 
-    app.get("/shows/:id",[verifyToken,verifyAdmin],getShowById);
+    app.get("/shows/:id",[verifyToken],getShowById);
 
 
     // app.put("/shows");

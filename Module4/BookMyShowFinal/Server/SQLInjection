@@ -1,0 +1,25 @@
+//SQL Injection 
+
+// const reqPayload = {
+//     "email":"admin' OR '1'='1",
+//     "password":"qwerty123"
+// };
+
+
+//const query  = select * from users where email={reqPayload.email} AND password={reqPayload.password};
+
+
+
+//Resulting querty :
+
+
+//select * from users where email= admin OR '1'='1'  AND password='qwerty123'
+
+
+
+
+// {
+//     "username": "attacker",
+//     "email": { "$gt": "" },
+//     "password": "password123"
+// }

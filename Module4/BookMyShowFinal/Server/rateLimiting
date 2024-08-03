@@ -1,0 +1,9 @@
+Rate limiting is a technique used to control the amount of incoming and outgoing traffic to or from a network or server.
+
+Purpose:
+
+Prevent Overload: By limiting the number of requests a user can make, it prevents servers from being overwhelmed by too many requests at once.
+
+Fair Usage: Ensures that all users have fair access to the service, preventing any single user from monopolizing resources.
+
+Protect Against Abuse: Helps protect against various forms of abuse, such as denial-of-service attacks, brute-force login attempts, and spam.

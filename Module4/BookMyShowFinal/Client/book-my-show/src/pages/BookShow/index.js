@@ -1,15 +1,51 @@
 import { useEffect, useState } from "react";
 import { getShowViaId } from "../../calls/shows";
 import { useParams } from "react-router-dom";
-import { Card, Col, Row, message } from "antd";
+import { Button, Card, Col, Row, message } from "antd";
 import moment from "moment";
-
+import "./style.css";
+import { bookShow } from "../../calls/booking";
 
 const BookShowPage = ()=>{
 
     const [show, setShow]  = useState(null);
+    const [selectedSeats, setSelectedSeats] = useState([]);
 
     const params = useParams();
+
+
+    const onCreateBooking = async ()=>{
+
+        if(selectedSeats.length===0){
+            message.error("No Seats Selected!");
+            return;
+        }
+
+        try{
+
+            const payload = {
+                show:show._id,
+                seats:selectedSeats,
+                transactionId:"ejqwbfilewbfileqbfqennfdqdq"
+            }
+
+            const response = await bookShow(payload);
+
+
+            if(response.success){
+                message.success(`Booking created Successfully with id: ${response.data._id}`);
+
+                setInterval(()=>{
+                    window.location.href="/";
+                },2000)
+            }
+
+
+
+        }catch(err){
+
+        }
+    }
 
 
     const getSeats = ()=>{
@@ -19,17 +55,40 @@ const BookShowPage = ()=>{
 
         let rows = totalSeats / columns;  //10
 
-        const allRows  = Array.from((Array(rows).keys()));
-        const allColumns = Array.from((Array(columns).keys()));
-        console.log(allRows.length);
 
+        let allRows = [];
+
+        for(let i=0;i<rows;i++){
+            allRows.push(i);
+        }
+
+        let allColumns = [];
+
+        for(let i=0;i<columns;i++){
+            allColumns.push(i);
+        }
+
+
+        function handleSeatSelect(seatNumber){
+
+            if(show.bookedSeats.includes(seatNumber)){
+                return;
+            }
+
+            if(selectedSeats.includes(seatNumber)){
+                const updatedSelectedSeats = selectedSeats.filter((seat)=>seat!=seatNumber);
+                setSelectedSeats(updatedSelectedSeats);
+                return;
+            }
+
+            setSelectedSeats([...selectedSeats, seatNumber]);
+
+
+        }
 
         return <div className="d-flex flex-column align-items-center">
 
 
-            <div className="">
-                <p> Screen this side, you will be watching in this direction</p>
-            </div>
 
 
             <div>
@@ -38,7 +97,27 @@ const BookShowPage = ()=>{
                     allRows.map((row)=>{
                         return <div>
                         {allColumns.map((col)=>{
-                            return <span> S </span>
+
+                         let seatNumber  = row * columns + col +1;
+
+                         let seatClass ="seat-btn";
+
+                         if(show.bookedSeats.includes(seatNumber)){
+                            seatClass+= " booked";
+                         }
+
+                         if(selectedSeats.includes(seatNumber)){
+                            seatClass+=" selected";
+                         }
+
+                         //calculation for first iteration 
+
+                         //row = 0 , col=0  : 0 * 12 + 0 + 1  = 1
+
+                         //row =2  , col = 5,  2*12 +  5 + 1= 30
+
+                            return <button onClick={()=>handleSeatSelect(seatNumber)}
+                              className={seatClass} > {seatNumber} </button>
                         })
                         }
                         <br/> 
@@ -49,19 +128,26 @@ const BookShowPage = ()=>{
             </div>
 
 
-            <div>
+            <div className="cardBottomPrice">
 
-                <div>
+                <div className="flex-1">
 
-                    Selected Seats : 1, 5
+                    Selected Seats : <span> {selectedSeats.join(", ")} </span>
                 </div>
 
                 <div>
 
-                    Total Price : 200
+                    Total Price : {selectedSeats.length * show.ticketPrice}
                 </div>
 
             </div>
+
+
+            <Button onClick={onCreateBooking} >
+
+                Create Booking
+
+            </Button>
 
 
         </div>
