@@ -1,16 +1,48 @@
 const Bookings = require("../models/bookingModel");
 const Shows = require("../models/showModel");
+const stripe = require('stripe')('sk_test_51Pk5XWKp25HZoc305l3Ufr7lbCYYS8rV3eAZjcX09wxPlD5d1NLxuEFLtFzuXGs17kVeIy7M44P5EYHc4qRS6Mpd00qtWZwTTX');
 
 
+const makePayment  = async (req,res)=>{
 
-const makePayment  = (req,res)=>{
+    const {token,amount} = req.body;
 
+    console.log(token);
+
+    try{
+
+        const customer = await stripe.customers.create({
+            email:token.email,
+            source:token.id
+        })
+
+       console.log(customer);
+
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount:amount,
+            currency:'usd',
+            customer:customer.id,
+            payment_method_types:['card'],
+            receipt_email:token.email,
+            description:"Token has been assigned to the movie!"
+        });
+
+        const transactionId = paymentIntent.id;
+
+
+        res.send({
+            success:true,
+            message:"Payment Successful!",
+            data:transactionId
+        })
+
+    }catch(err){
+        
     res.send({
-        success:true,
-        message:"Payment Successful!",
-        data:"ejqwbfilewbfileqbfqennfdqdq"
+        success:false,
+        message:err.message
     })
-
+    }
 }
 
 

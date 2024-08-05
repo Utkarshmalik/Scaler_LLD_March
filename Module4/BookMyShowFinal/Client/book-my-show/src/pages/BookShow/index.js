@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { Button, Card, Col, Row, message } from "antd";
 import moment from "moment";
 import "./style.css";
-import { bookShow } from "../../calls/booking";
+import { bookShow, makePayment } from "../../calls/booking";
+import StripeCheckout from 'react-stripe-checkout';
 
 const BookShowPage = ()=>{
 
@@ -14,19 +15,26 @@ const BookShowPage = ()=>{
     const params = useParams();
 
 
-    const onCreateBooking = async ()=>{
+    const onToken = async (token)=>{
 
-        if(selectedSeats.length===0){
-            message.error("No Seats Selected!");
-            return;
+        const amount = selectedSeats.length * show.ticketPrice;
+        
+        const response = await makePayment({token, amount});
+
+        if(response.success){
+            message.success(response.message);
+            performBooking(response.data);
         }
+    }
 
-        try{
+    const performBooking= async (transactionId)=>{
+
+            try{
 
             const payload = {
                 show:show._id,
                 seats:selectedSeats,
-                transactionId:"ejqwbfilewbfileqbfqennfdqdq"
+                transactionId:transactionId
             }
 
             const response = await bookShow(payload);
@@ -45,8 +53,11 @@ const BookShowPage = ()=>{
         }catch(err){
 
         }
+
     }
 
+
+ 
 
     const getSeats = ()=>{
 
@@ -142,14 +153,6 @@ const BookShowPage = ()=>{
 
             </div>
 
-
-            <Button onClick={onCreateBooking} >
-
-                Create Booking
-
-            </Button>
-
-
         </div>
 
 
@@ -241,6 +244,19 @@ const BookShowPage = ()=>{
 
 
                         {getSeats()}
+
+
+                        {
+
+                            selectedSeats.length > 0 && 
+
+                            <StripeCheckout 
+                            stripeKey="pk_test_51Pk5XWKp25HZoc30bcTmozGCabcS6KEKI7isIVopkB8TmzislgHqHIY3fzvxstSTY6bSN6LhQeW3z7oYpkc242Sd008g8PAKBI"
+                            token={onToken}
+                            />
+
+                        }
+
 
 
                     </Card>

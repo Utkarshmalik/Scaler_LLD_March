@@ -1,0 +1,11 @@
+Websockets
+
+Think of traditional HTTP communication as mailing letters (where you send a letter, wait for a response, and can't communicate until you receive a reply), whereas WebSockets is like a telephone call (where once you're connected, both parties can speak and listen at any time, in real-time).
+
+Persistent Connections: Emphasize that unlike HTTP, WebSocket creates a persistent connection between each client and the server. This means that once a client (C1, C2, C3) establishes a connection to the server, it remains open for two-way communication until explicitly closed by either client or a server.
+
+WebSocket connection as a "channel" or "pipeline" that directly links each client to the server. This channel is unique and private to the client-server pair.
+
+Full-Duplex Communication: Illustrate that these channels are full-duplex, meaning that both the server and the client can send messages to each other independently and simultaneously without waiting for a request-response sequence.
+
+Real-time Interaction: Highlight that this setup allows for real-time interaction. As soon as the server has new data (like a message or update), it can immediately send it to the connected client(s), and vice versa. WebSocket starts as an HTTP connection and then "upgrades" to a WebSocket connection through a handshake process. This upgrade is initiated with an HTTP request including a header (Upgrade
