@@ -1,12 +1,13 @@
 import { axiosInstance } from "."
 
+const backendEndPoint = process.env.REACT_APP_BACKEND_URL;
 
 export const getAllMovies = async ()=>{
 
     try{
 
         while(1){
-       const response = await axiosInstance.get("http://localhost:3000/movies");
+       const response = await axiosInstance.get(`${backendEndPoint}/movies`);
         return response.data;
         }
         
@@ -18,7 +19,7 @@ export const getAllMovies = async ()=>{
 
 export const getMovieById = async (id)=>{
     try{
-       const response = await axiosInstance.get(`http://localhost:3000/movies/${id}`);
+       const response = await axiosInstance.get(`${backendEndPoint}/movies/${id}`);
         return response.data;
 
     }catch(err){

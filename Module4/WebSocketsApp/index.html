@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Loads the Socket.io client library, which is served by the Socket.io server. -->
+    <script src="/socket.io/socket.io.js"></script>
+
+   
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> Whatsapp Chat </h1>
+
+<!-- 
+    <form id="chat-form" >
+        <input id="message" />
+        <button> Send </button>
+    </form> -->
+
+        <ul id="messages"> </ul>
+
+
+        <button id="joinBtn"> Join Room  </button>
+        <button id="leaveBtn"> Leave Room </button>
+
+            <form id="room-message-form">
+                <input id="room-message" placeholder="Message to room" autocomplete="off" />
+                <button>Send to Room</button>
+            </form>
+
+    <script>
+
+        // Establishes a connection to the WebSocket server.
+        const socket = io();
+
+
+        // const form = document.getElementById("chat-form");
+
+        // //Handle form submission
+        // form.addEventListener("submit", (e) => {
+        //     e.preventDefault();
+
+        //     const message = document.getElementById('message').value;
+            
+        //     //  Sends the message to the server using the 'message' event.
+        //     socket.emit('message', message);
+
+
+        // })
+
+        //Handle Incoming messages 
+
+        socket.on("message",(msg)=>{
+
+            const newMessage = document.createElement('li');
+            newMessage.textContent = msg;
+            
+            const messageList = document.getElementById('messages');
+            messageList.appendChild(newMessage);
+
+        })
+
+
+        const joinBtn = document.getElementById('joinBtn');
+
+        joinBtn.addEventListener("click",()=>{
+            console.log("Join clikced");
+            socket.emit('joinRoom',"newRoom")
+        })
+
+
+    const leaveBtn = document.getElementById('leaveBtn');
+
+    leaveBtn.addEventListener("click", () => {
+        console.log("leave called");
+        socket.emit('leaveRoom', "newRoom");
+    })
+
+     document.getElementById('room-message-form').addEventListener('submit', (e) => {
+         e.preventDefault();
+       const message = document.getElementById('room-message').value;
+
+       socket.emit('roomMessage',{room:"newRoom",message})
+
+     })
+
+    </script>
+
+</body>
+</html>

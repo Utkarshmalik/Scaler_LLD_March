@@ -1,12 +1,12 @@
 import { axiosInstance } from "."
 
-
+const backendEndPoint = process.env.REACT_APP_BACKEND_URL;
 
 
 export const makePayment = async (payload) => {
     
       try{
-        const response = await axiosInstance.post('http://localhost:3000/payment', payload);
+        const response = await axiosInstance.post(`${backendEndPoint}/payment`, payload);
         console.log(response.data);
         return response.data;
     }catch(err){

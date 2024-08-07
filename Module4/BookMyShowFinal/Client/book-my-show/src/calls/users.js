@@ -1,10 +1,11 @@
 import { axiosInstance } from ".";
+const backendEndPoint = process.env.REACT_APP_BACKEND_URL;
 
 export const RegisterUser  = async (userObj)=>{
 
 
     try{
-    const response = await axiosInstance.post("http://localhost:3000/ecomm/api/v1/auth/signup",{
+    const response = await axiosInstance.post(`${backendEndPoint}/ecomm/api/v1/auth/signup`,{
     name:userObj.name,
     email:userObj.email,
     password:userObj.password,
@@ -24,7 +25,7 @@ export const RegisterUser  = async (userObj)=>{
 export const LoginUser  = async (value) =>{
 
     try{
-    const response  = await axiosInstance.post("http://localhost:3000/login",{
+    const response  = await axiosInstance.post(`${backendEndPoint}/login`,{
             email:value.email,
             password:value.password
         })
@@ -40,7 +41,7 @@ export const LoginUser  = async (value) =>{
 export const ForgetPassword  = async (value) =>{
 
     try{
-    const response  = await axiosInstance.patch("http://localhost:3000/forgetPassword",{
+    const response  = await axiosInstance.patch(`${backendEndPoint}/forgetPassword`,{
             email:value.email
         })
 
@@ -56,7 +57,7 @@ export const ForgetPassword  = async (value) =>{
 export const ResetPassword  = async (value) =>{
 
     try{
-    const response  = await axiosInstance.patch("http://localhost:3000/resetPassword",{
+    const response  = await axiosInstance.patch(`${backendEndPoint}/resetPassword`,{
             otp:value.otp,
             password:value.password
         })

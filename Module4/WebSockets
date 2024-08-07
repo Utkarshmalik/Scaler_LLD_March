@@ -8,4 +8,17 @@ WebSocket connection as a "channel" or "pipeline" that directly links each clien
 
 Full-Duplex Communication: Illustrate that these channels are full-duplex, meaning that both the server and the client can send messages to each other independently and simultaneously without waiting for a request-response sequence.
 
-Real-time Interaction: Highlight that this setup allows for real-time interaction. As soon as the server has new data (like a message or update), it can immediately send it to the connected client(s), and vice versa. WebSocket starts as an HTTP connection and then "upgrades" to a WebSocket connection through a handshake process. This upgrade is initiated with an HTTP request including a header (Upgrade
+Real-time Interaction: Highlight that this setup allows for real-time interaction. As soon as the server has new data (like a message or update), it can immediately send it to the connected client(s), and vice versa. WebSocket starts as an HTTP connection and then "upgrades" to a WebSocket connection through a handshake process. This upgrade is initiated with an HTTP request including a header 
+
+
+
+ "rooms"  allows you to create isolated channels where a subset of connected clients can communicate. Clients can join and leave rooms, and you can broadcast messages to all clients in a specific room.
+ 
+ Joining a Room:
+Clients can join a room using the join method. This allows them to listen to messages broadcasted to that room.
+
+Leaving a Room:
+Clients can leave a room using the leave method. This stops them from receiving messages sent to that room.
+
+Broadcasting to a Room:
+You can broadcast messages to all clients in a specific room using the to or in methods.

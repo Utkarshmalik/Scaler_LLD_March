@@ -11,6 +11,9 @@ import SingleMoviePage from './pages/SingleMovie';
 import BookShowPage from './pages/BookShow';
 
 function App() {
+
+  console.log(process.env.REACT_APP_BACKEND_URL);
+  
   return (
     <div className="App">
     <BrowserRouter>
